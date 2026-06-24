@@ -1,0 +1,235 @@
+{
+  "schema_version": 1,
+  "run_id": "batch_20260624_2shots",
+  "created_at": "2026-06-24T11:11:14",
+  "samples": [
+    {
+      "sample_id": "sample_0001",
+      "source_image": "C:\\Users\\zf18116\\AppData\\Local\\Temp\\codex-clipboard-57444340-548c-4458-a127-866d1e80d78a.png",
+      "source_width": 2426,
+      "source_height": 1091,
+      "source_slot": 1,
+      "crop_box": [
+        1737,
+        81,
+        1927,
+        197
+      ],
+      "crop_path": "sample_0001_slot_1.png",
+      "predicted_species_id": "",
+      "predicted_name_zh": "",
+      "confidence": 0.0,
+      "approved": false,
+      "notes": ""
+    },
+    {
+      "sample_id": "sample_0002",
+      "source_image": "C:\\Users\\zf18116\\AppData\\Local\\Temp\\codex-clipboard-57444340-548c-4458-a127-866d1e80d78a.png",
+      "source_width": 2426,
+      "source_height": 1091,
+      "source_slot": 2,
+      "crop_box": [
+        1737,
+        212,
+        1927,
+        328
+      ],
+      "crop_path": "sample_0002_slot_2.png",
+      "predicted_species_id": "",
+      "predicted_name_zh": "",
+      "confidence": 0.0,
+      "approved": false,
+      "notes": ""
+    },
+    {
+      "sample_id": "sample_0003",
+      "source_image": "C:\\Users\\zf18116\\AppData\\Local\\Temp\\codex-clipboard-57444340-548c-4458-a127-866d1e80d78a.png",
+      "source_width": 2426,
+      "source_height": 1091,
+      "source_slot": 3,
+      "crop_box": [
+        1737,
+        343,
+        1927,
+        460
+      ],
+      "crop_path": "sample_0003_slot_3.png",
+      "predicted_species_id": "",
+      "predicted_name_zh": "",
+      "confidence": 0.0,
+      "approved": false,
+      "notes": ""
+    },
+    {
+      "sample_id": "sample_0004",
+      "source_image": "C:\\Users\\zf18116\\AppData\\Local\\Temp\\codex-clipboard-57444340-548c-4458-a127-866d1e80d78a.png",
+      "source_width": 2426,
+      "source_height": 1091,
+      "source_slot": 4,
+      "crop_box": [
+        1737,
+        475,
+        1927,
+        591
+      ],
+      "crop_path": "sample_0004_slot_4.png",
+      "predicted_species_id": "",
+      "predicted_name_zh": "",
+      "confidence": 0.0,
+      "approved": false,
+      "notes": ""
+    },
+    {
+      "sample_id": "sample_0005",
+      "source_image": "C:\\Users\\zf18116\\AppData\\Local\\Temp\\codex-clipboard-57444340-548c-4458-a127-866d1e80d78a.png",
+      "source_width": 2426,
+      "source_height": 1091,
+      "source_slot": 5,
+      "crop_box": [
+        1737,
+        606,
+        1927,
+        722
+      ],
+      "crop_path": "sample_0005_slot_5.png",
+      "predicted_species_id": "",
+      "predicted_name_zh": "",
+      "confidence": 0.0,
+      "approved": false,
+      "notes": ""
+    },
+    {
+      "sample_id": "sample_0006",
+      "source_image": "C:\\Users\\zf18116\\AppData\\Local\\Temp\\codex-clipboard-57444340-548c-4458-a127-866d1e80d78a.png",
+      "source_width": 2426,
+      "source_height": 1091,
+      "source_slot": 6,
+      "crop_box": [
+        1737,
+        737,
+        1927,
+        854
+      ],
+      "crop_path": "sample_0006_slot_6.png",
+      "predicted_species_id": "",
+      "predicted_name_zh": "",
+      "confidence": 0.0,
+      "approved": false,
+      "notes": ""
+    },
+    {
+      "sample_id": "sample_0007",
+      "source_image": "C:\\Users\\zf18116\\AppData\\Local\\Temp\\codex-clipboard-f6fa5198-f97d-4cab-aeba-86a1fb6f88e2.png",
+      "source_width": 2423,
+      "source_height": 1085,
+      "source_slot": 1,
+      "crop_box": [
+        1735,
+        80,
+        1925,
+        196
+      ],
+      "crop_path": "sample_0007_slot_1.png",
+      "predicted_species_id": "",
+      "predicted_name_zh": "",
+      "confidence": 0.0,
+      "approved": false,
+      "notes": ""
+    },
+    {
+      "sample_id": "sample_0008",
+      "source_image": "C:\\Users\\zf18116\\AppData\\Local\\Temp\\codex-clipboard-f6fa5198-f97d-4cab-aeba-86a1fb6f88e2.png",
+      "source_width": 2423,
+      "source_height": 1085,
+      "source_slot": 2,
+      "crop_box": [
+        1735,
+        211,
+        1925,
+        327
+      ],
+      "crop_path": "sample_0008_slot_2.png",
+      "predicted_species_id": "",
+      "predicted_name_zh": "",
+      "confidence": 0.0,
+      "approved": false,
+      "notes": ""
+    },
+    {
+      "sample_id": "sample_0009",
+      "source_image": "C:\\Users\\zf18116\\AppData\\Local\\Temp\\codex-clipboard-f6fa5198-f97d-4cab-aeba-86a1fb6f88e2.png",
+      "source_width": 2423,
+      "source_height": 1085,
+      "source_slot": 3,
+      "crop_box": [
+        1735,
+        342,
+        1925,
+        457
+      ],
+      "crop_path": "sample_0009_slot_3.png",
+      "predicted_species_id": "",
+      "predicted_name_zh": "",
+      "confidence": 0.0,
+      "approved": false,
+      "notes": ""
+    },
+    {
+      "sample_id": "sample_0010",
+      "source_image": "C:\\Users\\zf18116\\AppData\\Local\\Temp\\codex-clipboard-f6fa5198-f97d-4cab-aeba-86a1fb6f88e2.png",
+      "source_width": 2423,
+      "source_height": 1085,
+      "source_slot": 4,
+      "crop_box": [
+        1735,
+        472,
+        1925,
+        588
+      ],
+      "crop_path": "sample_0010_slot_4.png",
+      "predicted_species_id": "",
+      "predicted_name_zh": "",
+      "confidence": 0.0,
+      "approved": false,
+      "notes": ""
+    },
+    {
+      "sample_id": "sample_0011",
+      "source_image": "C:\\Users\\zf18116\\AppData\\Local\\Temp\\codex-clipboard-f6fa5198-f97d-4cab-aeba-86a1fb6f88e2.png",
+      "source_width": 2423,
+      "source_height": 1085,
+      "source_slot": 5,
+      "crop_box": [
+        1735,
+        603,
+        1925,
+        718
+      ],
+      "crop_path": "sample_0011_slot_5.png",
+      "predicted_species_id": "",
+      "predicted_name_zh": "",
+      "confidence": 0.0,
+      "approved": false,
+      "notes": ""
+    },
+    {
+      "sample_id": "sample_0012",
+      "source_image": "C:\\Users\\zf18116\\AppData\\Local\\Temp\\codex-clipboard-f6fa5198-f97d-4cab-aeba-86a1fb6f88e2.png",
+      "source_width": 2423,
+      "source_height": 1085,
+      "source_slot": 6,
+      "crop_box": [
+        1735,
+        733,
+        1925,
+        849
+      ],
+      "crop_path": "sample_0012_slot_6.png",
+      "predicted_species_id": "",
+      "predicted_name_zh": "",
+      "confidence": 0.0,
+      "approved": false,
+      "notes": ""
+    }
+  ]
+}

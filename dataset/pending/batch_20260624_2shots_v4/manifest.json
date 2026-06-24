@@ -1,0 +1,235 @@
+{
+  "schema_version": 1,
+  "run_id": "batch_20260624_2shots_v4",
+  "created_at": "2026-06-24T11:21:42",
+  "samples": [
+    {
+      "sample_id": "sample_0001",
+      "source_image": "C:\\Users\\zf18116\\AppData\\Local\\Temp\\codex-clipboard-57444340-548c-4458-a127-866d1e80d78a.png",
+      "source_width": 2426,
+      "source_height": 1091,
+      "source_slot": 1,
+      "crop_box": [
+        2078,
+        102,
+        2215,
+        228
+      ],
+      "crop_path": "sample_0001_slot_1.png",
+      "predicted_species_id": "pelipper",
+      "predicted_name_zh": "大嘴鸥",
+      "confidence": 0.9,
+      "approved": true,
+      "notes": ""
+    },
+    {
+      "sample_id": "sample_0002",
+      "source_image": "C:\\Users\\zf18116\\AppData\\Local\\Temp\\codex-clipboard-57444340-548c-4458-a127-866d1e80d78a.png",
+      "source_width": 2426,
+      "source_height": 1091,
+      "source_slot": 2,
+      "crop_box": [
+        2078,
+        271,
+        2215,
+        396
+      ],
+      "crop_path": "sample_0002_slot_2.png",
+      "predicted_species_id": "swampert",
+      "predicted_name_zh": "巨沼怪",
+      "confidence": 0.9,
+      "approved": true,
+      "notes": ""
+    },
+    {
+      "sample_id": "sample_0003",
+      "source_image": "C:\\Users\\zf18116\\AppData\\Local\\Temp\\codex-clipboard-57444340-548c-4458-a127-866d1e80d78a.png",
+      "source_width": 2426,
+      "source_height": 1091,
+      "source_slot": 3,
+      "crop_box": [
+        2078,
+        436,
+        2215,
+        562
+      ],
+      "crop_path": "sample_0003_slot_3.png",
+      "predicted_species_id": "duraludon",
+      "predicted_name_zh": "铝钢桥龙",
+      "confidence": 0.9,
+      "approved": true,
+      "notes": ""
+    },
+    {
+      "sample_id": "sample_0004",
+      "source_image": "C:\\Users\\zf18116\\AppData\\Local\\Temp\\codex-clipboard-57444340-548c-4458-a127-866d1e80d78a.png",
+      "source_width": 2426,
+      "source_height": 1091,
+      "source_slot": 4,
+      "crop_box": [
+        2079,
+        604,
+        2217,
+        730
+      ],
+      "crop_path": "sample_0004_slot_4.png",
+      "predicted_species_id": "garchomp",
+      "predicted_name_zh": "烈咬陆鲨",
+      "confidence": 0.9,
+      "approved": true,
+      "notes": ""
+    },
+    {
+      "sample_id": "sample_0005",
+      "source_image": "C:\\Users\\zf18116\\AppData\\Local\\Temp\\codex-clipboard-57444340-548c-4458-a127-866d1e80d78a.png",
+      "source_width": 2426,
+      "source_height": 1091,
+      "source_slot": 5,
+      "crop_box": [
+        2078,
+        769,
+        2215,
+        895
+      ],
+      "crop_path": "sample_0005_slot_5.png",
+      "predicted_species_id": "mimikyu",
+      "predicted_name_zh": "谜拟丘",
+      "confidence": 0.9,
+      "approved": true,
+      "notes": ""
+    },
+    {
+      "sample_id": "sample_0006",
+      "source_image": "C:\\Users\\zf18116\\AppData\\Local\\Temp\\codex-clipboard-57444340-548c-4458-a127-866d1e80d78a.png",
+      "source_width": 2426,
+      "source_height": 1091,
+      "source_slot": 6,
+      "crop_box": [
+        2078,
+        938,
+        2215,
+        1064
+      ],
+      "crop_path": "sample_0006_slot_6.png",
+      "predicted_species_id": "sceptile",
+      "predicted_name_zh": "蜥蜴王",
+      "confidence": 0.95,
+      "approved": true,
+      "notes": ""
+    },
+    {
+      "sample_id": "sample_0007",
+      "source_image": "C:\\Users\\zf18116\\AppData\\Local\\Temp\\codex-clipboard-f6fa5198-f97d-4cab-aeba-86a1fb6f88e2.png",
+      "source_width": 2423,
+      "source_height": 1085,
+      "source_slot": 1,
+      "crop_box": [
+        2073,
+        85,
+        2214,
+        190
+      ],
+      "crop_path": "sample_0007_slot_1.png",
+      "predicted_species_id": "pelipper",
+      "predicted_name_zh": "大嘴鸥",
+      "confidence": 0.9,
+      "approved": true,
+      "notes": ""
+    },
+    {
+      "sample_id": "sample_0008",
+      "source_image": "C:\\Users\\zf18116\\AppData\\Local\\Temp\\codex-clipboard-f6fa5198-f97d-4cab-aeba-86a1fb6f88e2.png",
+      "source_width": 2423,
+      "source_height": 1085,
+      "source_slot": 2,
+      "crop_box": [
+        2073,
+        253,
+        2214,
+        358
+      ],
+      "crop_path": "sample_0008_slot_2.png",
+      "predicted_species_id": "duraludon",
+      "predicted_name_zh": "铝钢桥龙",
+      "confidence": 0.9,
+      "approved": true,
+      "notes": ""
+    },
+    {
+      "sample_id": "sample_0009",
+      "source_image": "C:\\Users\\zf18116\\AppData\\Local\\Temp\\codex-clipboard-f6fa5198-f97d-4cab-aeba-86a1fb6f88e2.png",
+      "source_width": 2423,
+      "source_height": 1085,
+      "source_slot": 3,
+      "crop_box": [
+        2073,
+        421,
+        2214,
+        526
+      ],
+      "crop_path": "sample_0009_slot_3.png",
+      "predicted_species_id": "swampert",
+      "predicted_name_zh": "巨沼怪",
+      "confidence": 0.9,
+      "approved": true,
+      "notes": ""
+    },
+    {
+      "sample_id": "sample_0010",
+      "source_image": "C:\\Users\\zf18116\\AppData\\Local\\Temp\\codex-clipboard-f6fa5198-f97d-4cab-aeba-86a1fb6f88e2.png",
+      "source_width": 2423,
+      "source_height": 1085,
+      "source_slot": 4,
+      "crop_box": [
+        2073,
+        589,
+        2214,
+        694
+      ],
+      "crop_path": "sample_0010_slot_4.png",
+      "predicted_species_id": "meowscarada",
+      "predicted_name_zh": "魔幻假面喵",
+      "confidence": 0.9,
+      "approved": true,
+      "notes": ""
+    },
+    {
+      "sample_id": "sample_0011",
+      "source_image": "C:\\Users\\zf18116\\AppData\\Local\\Temp\\codex-clipboard-f6fa5198-f97d-4cab-aeba-86a1fb6f88e2.png",
+      "source_width": 2423,
+      "source_height": 1085,
+      "source_slot": 5,
+      "crop_box": [
+        2073,
+        757,
+        2214,
+        862
+      ],
+      "crop_path": "sample_0011_slot_5.png",
+      "predicted_species_id": "metagross",
+      "predicted_name_zh": "巨金怪",
+      "confidence": 0.9,
+      "approved": true,
+      "notes": ""
+    },
+    {
+      "sample_id": "sample_0012",
+      "source_image": "C:\\Users\\zf18116\\AppData\\Local\\Temp\\codex-clipboard-f6fa5198-f97d-4cab-aeba-86a1fb6f88e2.png",
+      "source_width": 2423,
+      "source_height": 1085,
+      "source_slot": 6,
+      "crop_box": [
+        2073,
+        925,
+        2214,
+        1030
+      ],
+      "crop_path": "sample_0012_slot_6.png",
+      "predicted_species_id": "mimikyu",
+      "predicted_name_zh": "谜拟丘",
+      "confidence": 0.9,
+      "approved": true,
+      "notes": ""
+    }
+  ]
+}

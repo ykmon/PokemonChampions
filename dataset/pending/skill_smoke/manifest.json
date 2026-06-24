@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "run_id": "skill_smoke",
+  "created_at": "2026-06-24T11:05:46",
+  "samples": [
+    {
+      "sample_id": "sample_0001",
+      "source_image": "C:\\Users\\zf18116\\AppData\\Local\\Temp\\codex-clipboard-9332da2b-5e28-4456-bef4-cc5058b980b8.png",
+      "source_width": 2436,
+      "source_height": 1190,
+      "source_slot": 1,
+      "crop_box": [
+        1745,
+        88,
+        1935,
+        215
+      ],
+      "crop_path": "sample_0001_slot_1.png",
+      "predicted_species_id": "swampert",
+      "predicted_name_zh": "",
+      "confidence": 0.95,
+      "approved": true,
+      "notes": ""
+    },
+    {
+      "sample_id": "sample_0002",
+      "source_image": "C:\\Users\\zf18116\\AppData\\Local\\Temp\\codex-clipboard-9332da2b-5e28-4456-bef4-cc5058b980b8.png",
+      "source_width": 2436,
+      "source_height": 1190,
+      "source_slot": 2,
+      "crop_box": [
+        1745,
+        231,
+        1935,
+        358
+      ],
+      "crop_path": "sample_0002_slot_2.png",
+      "predicted_species_id": "meganium",
+      "predicted_name_zh": "",
+      "confidence": 0.95,
+      "approved": true,
+      "notes": ""
+    },
+    {
+      "sample_id": "sample_0003",
+      "source_image": "C:\\Users\\zf18116\\AppData\\Local\\Temp\\codex-clipboard-9332da2b-5e28-4456-bef4-cc5058b980b8.png",
+      "source_width": 2436,
+      "source_height": 1190,
+      "source_slot": 3,
+      "crop_box": [
+        1745,
+        375,
+        1935,
+        501
+      ],
+      "crop_path": "sample_0003_slot_3.png",
+      "predicted_species_id": "pelipper",
+      "predicted_name_zh": "",
+      "confidence": 0.95,
+      "approved": true,
+      "notes": ""
+    },
+    {
+      "sample_id": "sample_0004",
+      "source_image": "C:\\Users\\zf18116\\AppData\\Local\\Temp\\codex-clipboard-9332da2b-5e28-4456-bef4-cc5058b980b8.png",
+      "source_width": 2436,
+      "source_height": 1190,
+      "source_slot": 4,
+      "crop_box": [
+        1745,
+        518,
+        1935,
+        645
+      ],
+      "crop_path": "sample_0004_slot_4.png",
+      "predicted_species_id": "basculegion",
+      "predicted_name_zh": "",
+      "confidence": 0.95,
+      "approved": true,
+      "notes": ""
+    },
+    {
+      "sample_id": "sample_0005",
+      "source_image": "C:\\Users\\zf18116\\AppData\\Local\\Temp\\codex-clipboard-9332da2b-5e28-4456-bef4-cc5058b980b8.png",
+      "source_width": 2436,
+      "source_height": 1190,
+      "source_slot": 5,
+      "crop_box": [
+        1745,
+        661,
+        1935,
+        788
+      ],
+      "crop_path": "sample_0005_slot_5.png",
+      "predicted_species_id": "duraludon",
+      "predicted_name_zh": "",
+      "confidence": 0.95,
+      "approved": true,
+      "notes": ""
+    },
+    {
+      "sample_id": "sample_0006",
+      "source_image": "C:\\Users\\zf18116\\AppData\\Local\\Temp\\codex-clipboard-9332da2b-5e28-4456-bef4-cc5058b980b8.png",
+      "source_width": 2436,
+      "source_height": 1190,
+      "source_slot": 6,
+      "crop_box": [
+        1745,
+        804,
+        1935,
+        931
+      ],
+      "crop_path": "sample_0006_slot_6.png",
+      "predicted_species_id": "garchomp",
+      "predicted_name_zh": "",
+      "confidence": 0.95,
+      "approved": true,
+      "notes": ""
+    }
+  ]
+}

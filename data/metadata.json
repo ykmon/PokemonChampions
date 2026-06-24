@@ -1,0 +1,6 @@
+{
+  "schema_version": 1,
+  "game": "Pokemon Champions",
+  "data_version": "v1-sample",
+  "notes": "Starter sample data for local assistant development. Replace with versioned game data as the roster is confirmed."
+}

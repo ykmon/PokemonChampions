@@ -1,0 +1,472 @@
+.sprite-poke { background: url("./sprite_poke_2.png") no-repeat; }
+.sprite-poke::after { content: ""; display: block; }
+.sprite-poke-ui_PokeIcon_02_0003_00_0 { background-size: 1623.44% 1521.88%; background-position: 0% 0%; }
+.sprite-poke-ui_PokeIcon_02_0003_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0006_00_0 { background-size: 1623.44% 1521.88%; background-position: 6.667% 0%; }
+.sprite-poke-ui_PokeIcon_02_0006_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0009_00_0 { background-size: 1623.44% 1521.88%; background-position: 0% 7.143%; }
+.sprite-poke-ui_PokeIcon_02_0009_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0015_00_0 { background-size: 1623.44% 1521.88%; background-position: 6.667% 7.143%; }
+.sprite-poke-ui_PokeIcon_02_0015_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0018_00_0 { background-size: 1623.44% 1521.88%; background-position: 13.333% 0%; }
+.sprite-poke-ui_PokeIcon_02_0018_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0024_00_0 { background-size: 1623.44% 1521.88%; background-position: 13.333% 7.143%; }
+.sprite-poke-ui_PokeIcon_02_0024_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0025_00_0 { background-size: 1623.44% 1521.88%; background-position: 0% 14.286%; }
+.sprite-poke-ui_PokeIcon_02_0025_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0026_00_0 { background-size: 1623.44% 1521.88%; background-position: 6.667% 14.286%; }
+.sprite-poke-ui_PokeIcon_02_0026_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0026_01_0 { background-size: 1623.44% 1521.88%; background-position: 13.333% 14.286%; }
+.sprite-poke-ui_PokeIcon_02_0026_01_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0036_00_0 { background-size: 1623.44% 1521.88%; background-position: 20% 0%; }
+.sprite-poke-ui_PokeIcon_02_0036_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0038_00_0 { background-size: 1623.44% 1521.88%; background-position: 20% 7.143%; }
+.sprite-poke-ui_PokeIcon_02_0038_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0038_01_0 { background-size: 1623.44% 1521.88%; background-position: 20% 14.286%; }
+.sprite-poke-ui_PokeIcon_02_0038_01_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0045_00_0 { background-size: 1623.44% 1521.88%; background-position: 0% 21.429%; }
+.sprite-poke-ui_PokeIcon_02_0045_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0059_00_0 { background-size: 1623.44% 1521.88%; background-position: 6.667% 21.429%; }
+.sprite-poke-ui_PokeIcon_02_0059_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0059_01_0 { background-size: 1623.44% 1521.88%; background-position: 13.333% 21.429%; }
+.sprite-poke-ui_PokeIcon_02_0059_01_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0065_00_0 { background-size: 1623.44% 1521.88%; background-position: 20% 21.429%; }
+.sprite-poke-ui_PokeIcon_02_0065_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0068_00_0 { background-size: 1623.44% 1521.88%; background-position: 26.667% 0%; }
+.sprite-poke-ui_PokeIcon_02_0068_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0071_00_0 { background-size: 1623.44% 1521.88%; background-position: 26.667% 7.143%; }
+.sprite-poke-ui_PokeIcon_02_0071_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0080_00_0 { background-size: 1623.44% 1521.88%; background-position: 26.667% 14.286%; }
+.sprite-poke-ui_PokeIcon_02_0080_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0080_02_0 { background-size: 1623.44% 1521.88%; background-position: 26.667% 21.429%; }
+.sprite-poke-ui_PokeIcon_02_0080_02_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0094_00_0 { background-size: 1623.44% 1521.88%; background-position: 0% 28.571%; }
+.sprite-poke-ui_PokeIcon_02_0094_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0115_00_0 { background-size: 1623.44% 1521.88%; background-position: 6.667% 28.571%; }
+.sprite-poke-ui_PokeIcon_02_0115_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0121_00_0 { background-size: 1623.44% 1521.88%; background-position: 13.333% 28.571%; }
+.sprite-poke-ui_PokeIcon_02_0121_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0127_00_0 { background-size: 1623.44% 1521.88%; background-position: 20% 28.571%; }
+.sprite-poke-ui_PokeIcon_02_0127_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0128_00_0 { background-size: 1623.44% 1521.88%; background-position: 26.667% 28.571%; }
+.sprite-poke-ui_PokeIcon_02_0128_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0128_01_0 { background-size: 1623.44% 1521.88%; background-position: 33.333% 0%; }
+.sprite-poke-ui_PokeIcon_02_0128_01_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0128_02_0 { background-size: 1623.44% 1521.88%; background-position: 33.333% 7.143%; }
+.sprite-poke-ui_PokeIcon_02_0128_02_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0128_03_0 { background-size: 1623.44% 1521.88%; background-position: 33.333% 14.286%; }
+.sprite-poke-ui_PokeIcon_02_0128_03_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0130_00_0 { background-size: 1623.44% 1521.88%; background-position: 33.333% 21.429%; }
+.sprite-poke-ui_PokeIcon_02_0130_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0132_00_0 { background-size: 1623.44% 1521.88%; background-position: 33.333% 28.571%; }
+.sprite-poke-ui_PokeIcon_02_0132_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0134_00_0 { background-size: 1623.44% 1521.88%; background-position: 0% 35.714%; }
+.sprite-poke-ui_PokeIcon_02_0134_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0135_00_0 { background-size: 1623.44% 1521.88%; background-position: 6.667% 35.714%; }
+.sprite-poke-ui_PokeIcon_02_0135_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0136_00_0 { background-size: 1623.44% 1521.88%; background-position: 13.333% 35.714%; }
+.sprite-poke-ui_PokeIcon_02_0136_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0142_00_0 { background-size: 1623.44% 1521.88%; background-position: 20% 35.714%; }
+.sprite-poke-ui_PokeIcon_02_0142_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0143_00_0 { background-size: 1623.44% 1521.88%; background-position: 26.667% 35.714%; }
+.sprite-poke-ui_PokeIcon_02_0143_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0149_00_0 { background-size: 1623.44% 1521.88%; background-position: 33.333% 35.714%; }
+.sprite-poke-ui_PokeIcon_02_0149_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0154_00_0 { background-size: 1623.44% 1521.88%; background-position: 40% 0%; }
+.sprite-poke-ui_PokeIcon_02_0154_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0157_00_0 { background-size: 1623.44% 1521.88%; background-position: 40% 7.143%; }
+.sprite-poke-ui_PokeIcon_02_0157_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0157_01_0 { background-size: 1623.44% 1521.88%; background-position: 40% 14.286%; }
+.sprite-poke-ui_PokeIcon_02_0157_01_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0160_00_0 { background-size: 1623.44% 1521.88%; background-position: 40% 21.429%; }
+.sprite-poke-ui_PokeIcon_02_0160_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0168_00_0 { background-size: 1623.44% 1521.88%; background-position: 40% 28.571%; }
+.sprite-poke-ui_PokeIcon_02_0168_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0181_00_0 { background-size: 1623.44% 1521.88%; background-position: 40% 35.714%; }
+.sprite-poke-ui_PokeIcon_02_0181_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0184_00_0 { background-size: 1623.44% 1521.88%; background-position: 0% 42.857%; }
+.sprite-poke-ui_PokeIcon_02_0184_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0186_00_0 { background-size: 1623.44% 1521.88%; background-position: 6.667% 42.857%; }
+.sprite-poke-ui_PokeIcon_02_0186_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0196_00_0 { background-size: 1623.44% 1521.88%; background-position: 13.333% 42.857%; }
+.sprite-poke-ui_PokeIcon_02_0196_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0197_00_0 { background-size: 1623.44% 1521.88%; background-position: 20% 42.857%; }
+.sprite-poke-ui_PokeIcon_02_0197_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0199_00_0 { background-size: 1623.44% 1521.88%; background-position: 26.667% 42.857%; }
+.sprite-poke-ui_PokeIcon_02_0199_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0199_01_0 { background-size: 1623.44% 1521.88%; background-position: 33.333% 42.857%; }
+.sprite-poke-ui_PokeIcon_02_0199_01_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0205_00_0 { background-size: 1623.44% 1521.88%; background-position: 40% 42.857%; }
+.sprite-poke-ui_PokeIcon_02_0205_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0208_00_0 { background-size: 1623.44% 1521.88%; background-position: 46.667% 0%; }
+.sprite-poke-ui_PokeIcon_02_0208_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0211_00_0 { background-size: 1623.44% 1521.88%; background-position: 46.667% 7.143%; }
+.sprite-poke-ui_PokeIcon_02_0211_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0212_00_0 { background-size: 1623.44% 1521.88%; background-position: 46.667% 14.286%; }
+.sprite-poke-ui_PokeIcon_02_0212_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0214_00_0 { background-size: 1623.44% 1521.88%; background-position: 46.667% 21.429%; }
+.sprite-poke-ui_PokeIcon_02_0214_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0227_00_0 { background-size: 1623.44% 1521.88%; background-position: 46.667% 28.571%; }
+.sprite-poke-ui_PokeIcon_02_0227_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0229_00_0 { background-size: 1623.44% 1521.88%; background-position: 46.667% 35.714%; }
+.sprite-poke-ui_PokeIcon_02_0229_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0248_00_0 { background-size: 1623.44% 1521.88%; background-position: 46.667% 42.857%; }
+.sprite-poke-ui_PokeIcon_02_0248_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0254_00_0 { background-size: 1623.44% 1521.88%; background-position: 0% 50%; }
+.sprite-poke-ui_PokeIcon_02_0254_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0257_00_0 { background-size: 1623.44% 1521.88%; background-position: 6.667% 50%; }
+.sprite-poke-ui_PokeIcon_02_0257_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0260_00_0 { background-size: 1623.44% 1521.88%; background-position: 13.333% 50%; }
+.sprite-poke-ui_PokeIcon_02_0260_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0279_00_0 { background-size: 1623.44% 1521.88%; background-position: 20% 50%; }
+.sprite-poke-ui_PokeIcon_02_0279_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0282_00_0 { background-size: 1623.44% 1521.88%; background-position: 26.667% 50%; }
+.sprite-poke-ui_PokeIcon_02_0282_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0302_00_0 { background-size: 1623.44% 1521.88%; background-position: 33.333% 50%; }
+.sprite-poke-ui_PokeIcon_02_0302_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0303_00_0 { background-size: 1623.44% 1521.88%; background-position: 40% 50%; }
+.sprite-poke-ui_PokeIcon_02_0303_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0306_00_0 { background-size: 1623.44% 1521.88%; background-position: 46.667% 50%; }
+.sprite-poke-ui_PokeIcon_02_0306_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0308_00_0 { background-size: 1623.44% 1521.88%; background-position: 53.333% 0%; }
+.sprite-poke-ui_PokeIcon_02_0308_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0310_00_0 { background-size: 1623.44% 1521.88%; background-position: 53.333% 7.143%; }
+.sprite-poke-ui_PokeIcon_02_0310_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0319_00_0 { background-size: 1623.44% 1521.88%; background-position: 53.333% 14.286%; }
+.sprite-poke-ui_PokeIcon_02_0319_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0323_00_0 { background-size: 1623.44% 1521.88%; background-position: 53.333% 21.429%; }
+.sprite-poke-ui_PokeIcon_02_0323_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0324_00_0 { background-size: 1623.44% 1521.88%; background-position: 53.333% 28.571%; }
+.sprite-poke-ui_PokeIcon_02_0324_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0334_00_0 { background-size: 1623.44% 1521.88%; background-position: 53.333% 35.714%; }
+.sprite-poke-ui_PokeIcon_02_0334_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0350_00_0 { background-size: 1623.44% 1521.88%; background-position: 53.333% 42.857%; }
+.sprite-poke-ui_PokeIcon_02_0350_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0351_00_0 { background-size: 1623.44% 1521.88%; background-position: 53.333% 50%; }
+.sprite-poke-ui_PokeIcon_02_0351_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0354_00_0 { background-size: 1623.44% 1521.88%; background-position: 0% 57.143%; }
+.sprite-poke-ui_PokeIcon_02_0354_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0358_00_0 { background-size: 1623.44% 1521.88%; background-position: 6.667% 57.143%; }
+.sprite-poke-ui_PokeIcon_02_0358_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0359_00_0 { background-size: 1623.44% 1521.88%; background-position: 13.333% 57.143%; }
+.sprite-poke-ui_PokeIcon_02_0359_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0362_00_0 { background-size: 1623.44% 1521.88%; background-position: 20% 57.143%; }
+.sprite-poke-ui_PokeIcon_02_0362_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0376_00_0 { background-size: 1623.44% 1521.88%; background-position: 26.667% 57.143%; }
+.sprite-poke-ui_PokeIcon_02_0376_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0389_00_0 { background-size: 1623.44% 1521.88%; background-position: 33.333% 57.143%; }
+.sprite-poke-ui_PokeIcon_02_0389_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0392_00_0 { background-size: 1623.44% 1521.88%; background-position: 40% 57.143%; }
+.sprite-poke-ui_PokeIcon_02_0392_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0395_00_0 { background-size: 1623.44% 1521.88%; background-position: 46.667% 57.143%; }
+.sprite-poke-ui_PokeIcon_02_0395_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0398_00_0 { background-size: 1623.44% 1521.88%; background-position: 53.333% 57.143%; }
+.sprite-poke-ui_PokeIcon_02_0398_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0405_00_0 { background-size: 1623.44% 1521.88%; background-position: 60% 0%; }
+.sprite-poke-ui_PokeIcon_02_0405_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0407_00_0 { background-size: 1623.44% 1521.88%; background-position: 60% 7.143%; }
+.sprite-poke-ui_PokeIcon_02_0407_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0409_00_0 { background-size: 1623.44% 1521.88%; background-position: 60% 14.286%; }
+.sprite-poke-ui_PokeIcon_02_0409_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0411_00_0 { background-size: 1623.44% 1521.88%; background-position: 60% 21.429%; }
+.sprite-poke-ui_PokeIcon_02_0411_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0428_00_0 { background-size: 1623.44% 1521.88%; background-position: 60% 28.571%; }
+.sprite-poke-ui_PokeIcon_02_0428_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0442_00_0 { background-size: 1623.44% 1521.88%; background-position: 60% 35.714%; }
+.sprite-poke-ui_PokeIcon_02_0442_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0445_00_0 { background-size: 1623.44% 1521.88%; background-position: 60% 42.857%; }
+.sprite-poke-ui_PokeIcon_02_0445_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0448_00_0 { background-size: 1623.44% 1521.88%; background-position: 60% 50%; }
+.sprite-poke-ui_PokeIcon_02_0448_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0450_00_0 { background-size: 1623.44% 1521.88%; background-position: 60% 57.143%; }
+.sprite-poke-ui_PokeIcon_02_0450_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0454_00_0 { background-size: 1623.44% 1521.88%; background-position: 0% 64.286%; }
+.sprite-poke-ui_PokeIcon_02_0454_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0460_00_0 { background-size: 1623.44% 1521.88%; background-position: 6.667% 64.286%; }
+.sprite-poke-ui_PokeIcon_02_0460_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0461_00_0 { background-size: 1623.44% 1521.88%; background-position: 13.333% 64.286%; }
+.sprite-poke-ui_PokeIcon_02_0461_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0464_00_0 { background-size: 1623.44% 1521.88%; background-position: 20% 64.286%; }
+.sprite-poke-ui_PokeIcon_02_0464_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0470_00_0 { background-size: 1623.44% 1521.88%; background-position: 26.667% 64.286%; }
+.sprite-poke-ui_PokeIcon_02_0470_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0471_00_0 { background-size: 1623.44% 1521.88%; background-position: 33.333% 64.286%; }
+.sprite-poke-ui_PokeIcon_02_0471_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0472_00_0 { background-size: 1623.44% 1521.88%; background-position: 40% 64.286%; }
+.sprite-poke-ui_PokeIcon_02_0472_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0473_00_0 { background-size: 1623.44% 1521.88%; background-position: 46.667% 64.286%; }
+.sprite-poke-ui_PokeIcon_02_0473_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0475_00_0 { background-size: 1623.44% 1521.88%; background-position: 53.333% 64.286%; }
+.sprite-poke-ui_PokeIcon_02_0475_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0478_00_0 { background-size: 1623.44% 1521.88%; background-position: 60% 64.286%; }
+.sprite-poke-ui_PokeIcon_02_0478_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0479_00_0 { background-size: 1623.44% 1521.88%; background-position: 66.667% 0%; }
+.sprite-poke-ui_PokeIcon_02_0479_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0479_01_0 { background-size: 1623.44% 1521.88%; background-position: 66.667% 7.143%; }
+.sprite-poke-ui_PokeIcon_02_0479_01_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0479_02_0 { background-size: 1623.44% 1521.88%; background-position: 66.667% 14.286%; }
+.sprite-poke-ui_PokeIcon_02_0479_02_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0479_03_0 { background-size: 1623.44% 1521.88%; background-position: 66.667% 21.429%; }
+.sprite-poke-ui_PokeIcon_02_0479_03_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0479_04_0 { background-size: 1623.44% 1521.88%; background-position: 66.667% 28.571%; }
+.sprite-poke-ui_PokeIcon_02_0479_04_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0479_05_0 { background-size: 1623.44% 1521.88%; background-position: 66.667% 35.714%; }
+.sprite-poke-ui_PokeIcon_02_0479_05_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0497_00_0 { background-size: 1623.44% 1521.88%; background-position: 66.667% 42.857%; }
+.sprite-poke-ui_PokeIcon_02_0497_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0500_00_0 { background-size: 1623.44% 1521.88%; background-position: 66.667% 50%; }
+.sprite-poke-ui_PokeIcon_02_0500_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0503_00_0 { background-size: 1623.44% 1521.88%; background-position: 66.667% 57.143%; }
+.sprite-poke-ui_PokeIcon_02_0503_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0503_01_0 { background-size: 1623.44% 1521.88%; background-position: 66.667% 64.286%; }
+.sprite-poke-ui_PokeIcon_02_0503_01_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0505_00_0 { background-size: 1623.44% 1521.88%; background-position: 0% 71.429%; }
+.sprite-poke-ui_PokeIcon_02_0505_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0510_00_0 { background-size: 1623.44% 1521.88%; background-position: 6.667% 71.429%; }
+.sprite-poke-ui_PokeIcon_02_0510_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0512_00_0 { background-size: 1623.44% 1521.88%; background-position: 13.333% 71.429%; }
+.sprite-poke-ui_PokeIcon_02_0512_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0514_00_0 { background-size: 1623.44% 1521.88%; background-position: 20% 71.429%; }
+.sprite-poke-ui_PokeIcon_02_0514_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0516_00_0 { background-size: 1623.44% 1521.88%; background-position: 26.667% 71.429%; }
+.sprite-poke-ui_PokeIcon_02_0516_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0518_00_0 { background-size: 1623.44% 1521.88%; background-position: 33.333% 71.429%; }
+.sprite-poke-ui_PokeIcon_02_0518_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0530_00_0 { background-size: 1623.44% 1521.88%; background-position: 40% 71.429%; }
+.sprite-poke-ui_PokeIcon_02_0530_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0531_00_0 { background-size: 1623.44% 1521.88%; background-position: 46.667% 71.429%; }
+.sprite-poke-ui_PokeIcon_02_0531_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0534_00_0 { background-size: 1623.44% 1521.88%; background-position: 53.333% 71.429%; }
+.sprite-poke-ui_PokeIcon_02_0534_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0545_00_0 { background-size: 1623.44% 1521.88%; background-position: 60% 71.429%; }
+.sprite-poke-ui_PokeIcon_02_0545_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0547_00_0 { background-size: 1623.44% 1521.88%; background-position: 66.667% 71.429%; }
+.sprite-poke-ui_PokeIcon_02_0547_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0553_00_0 { background-size: 1623.44% 1521.88%; background-position: 73.333% 0%; }
+.sprite-poke-ui_PokeIcon_02_0553_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0560_00_0 { background-size: 1623.44% 1521.88%; background-position: 73.333% 7.143%; }
+.sprite-poke-ui_PokeIcon_02_0560_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0563_00_0 { background-size: 1623.44% 1521.88%; background-position: 73.333% 14.286%; }
+.sprite-poke-ui_PokeIcon_02_0563_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0569_00_0 { background-size: 1623.44% 1521.88%; background-position: 73.333% 21.429%; }
+.sprite-poke-ui_PokeIcon_02_0569_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0571_00_0 { background-size: 1623.44% 1521.88%; background-position: 73.333% 28.571%; }
+.sprite-poke-ui_PokeIcon_02_0571_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0571_01_0 { background-size: 1623.44% 1521.88%; background-position: 73.333% 35.714%; }
+.sprite-poke-ui_PokeIcon_02_0571_01_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0579_00_0 { background-size: 1623.44% 1521.88%; background-position: 73.333% 42.857%; }
+.sprite-poke-ui_PokeIcon_02_0579_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0584_00_0 { background-size: 1623.44% 1521.88%; background-position: 73.333% 50%; }
+.sprite-poke-ui_PokeIcon_02_0584_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0587_00_0 { background-size: 1623.44% 1521.88%; background-position: 73.333% 57.143%; }
+.sprite-poke-ui_PokeIcon_02_0587_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0604_00_0 { background-size: 1623.44% 1521.88%; background-position: 73.333% 64.286%; }
+.sprite-poke-ui_PokeIcon_02_0604_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0609_00_0 { background-size: 1623.44% 1521.88%; background-position: 73.333% 71.429%; }
+.sprite-poke-ui_PokeIcon_02_0609_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0614_00_0 { background-size: 1623.44% 1521.88%; background-position: 0% 78.571%; }
+.sprite-poke-ui_PokeIcon_02_0614_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0618_00_0 { background-size: 1623.44% 1521.88%; background-position: 6.667% 78.571%; }
+.sprite-poke-ui_PokeIcon_02_0618_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0618_01_0 { background-size: 1623.44% 1521.88%; background-position: 13.333% 78.571%; }
+.sprite-poke-ui_PokeIcon_02_0618_01_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0623_00_0 { background-size: 1623.44% 1521.88%; background-position: 20% 78.571%; }
+.sprite-poke-ui_PokeIcon_02_0623_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0635_00_0 { background-size: 1623.44% 1521.88%; background-position: 26.667% 78.571%; }
+.sprite-poke-ui_PokeIcon_02_0635_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0637_00_0 { background-size: 1623.44% 1521.88%; background-position: 33.333% 78.571%; }
+.sprite-poke-ui_PokeIcon_02_0637_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0652_00_0 { background-size: 1623.44% 1521.88%; background-position: 40% 78.571%; }
+.sprite-poke-ui_PokeIcon_02_0652_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0655_00_0 { background-size: 1623.44% 1521.88%; background-position: 46.667% 78.571%; }
+.sprite-poke-ui_PokeIcon_02_0655_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0658_00_0 { background-size: 1623.44% 1521.88%; background-position: 53.333% 78.571%; }
+.sprite-poke-ui_PokeIcon_02_0658_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0660_00_0 { background-size: 1623.44% 1521.88%; background-position: 60% 78.571%; }
+.sprite-poke-ui_PokeIcon_02_0660_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0663_00_0 { background-size: 1623.44% 1521.88%; background-position: 66.667% 78.571%; }
+.sprite-poke-ui_PokeIcon_02_0663_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0666_18_0 { background-size: 1623.44% 1521.88%; background-position: 73.333% 78.571%; }
+.sprite-poke-ui_PokeIcon_02_0666_18_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0668_00_0 { background-size: 1623.44% 1521.88%; background-position: 80% 0%; }
+.sprite-poke-ui_PokeIcon_02_0668_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0670_05_0 { background-size: 1623.44% 1521.88%; background-position: 80% 7.143%; }
+.sprite-poke-ui_PokeIcon_02_0670_05_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0671_00_0 { background-size: 1623.44% 1521.88%; background-position: 80% 14.286%; }
+.sprite-poke-ui_PokeIcon_02_0671_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0675_00_0 { background-size: 1623.44% 1521.88%; background-position: 80% 21.429%; }
+.sprite-poke-ui_PokeIcon_02_0675_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0676_00_0 { background-size: 1623.44% 1521.88%; background-position: 80% 28.571%; }
+.sprite-poke-ui_PokeIcon_02_0676_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0678_00_0 { background-size: 1623.44% 1521.88%; background-position: 80% 35.714%; }
+.sprite-poke-ui_PokeIcon_02_0678_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0678_01_0 { background-size: 1623.44% 1521.88%; background-position: 80% 42.857%; }
+.sprite-poke-ui_PokeIcon_02_0678_01_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0681_00_0 { background-size: 1623.44% 1521.88%; background-position: 80% 50%; }
+.sprite-poke-ui_PokeIcon_02_0681_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0683_00_0 { background-size: 1623.44% 1521.88%; background-position: 80% 57.143%; }
+.sprite-poke-ui_PokeIcon_02_0683_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0685_00_0 { background-size: 1623.44% 1521.88%; background-position: 80% 64.286%; }
+.sprite-poke-ui_PokeIcon_02_0685_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0687_00_0 { background-size: 1623.44% 1521.88%; background-position: 80% 71.429%; }
+.sprite-poke-ui_PokeIcon_02_0687_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0689_00_0 { background-size: 1623.44% 1521.88%; background-position: 80% 78.571%; }
+.sprite-poke-ui_PokeIcon_02_0689_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0691_00_0 { background-size: 1623.44% 1521.88%; background-position: 0% 85.714%; }
+.sprite-poke-ui_PokeIcon_02_0691_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0693_00_0 { background-size: 1623.44% 1521.88%; background-position: 6.667% 85.714%; }
+.sprite-poke-ui_PokeIcon_02_0693_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0695_00_0 { background-size: 1623.44% 1521.88%; background-position: 13.333% 85.714%; }
+.sprite-poke-ui_PokeIcon_02_0695_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0697_00_0 { background-size: 1623.44% 1521.88%; background-position: 20% 85.714%; }
+.sprite-poke-ui_PokeIcon_02_0697_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0699_00_0 { background-size: 1623.44% 1521.88%; background-position: 26.667% 85.714%; }
+.sprite-poke-ui_PokeIcon_02_0699_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0700_00_0 { background-size: 1623.44% 1521.88%; background-position: 33.333% 85.714%; }
+.sprite-poke-ui_PokeIcon_02_0700_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0701_00_0 { background-size: 1623.44% 1521.88%; background-position: 40% 85.714%; }
+.sprite-poke-ui_PokeIcon_02_0701_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0702_00_0 { background-size: 1623.44% 1521.88%; background-position: 46.667% 85.714%; }
+.sprite-poke-ui_PokeIcon_02_0702_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0706_00_0 { background-size: 1623.44% 1521.88%; background-position: 53.333% 85.714%; }
+.sprite-poke-ui_PokeIcon_02_0706_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0706_01_0 { background-size: 1623.44% 1521.88%; background-position: 60% 85.714%; }
+.sprite-poke-ui_PokeIcon_02_0706_01_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0707_00_0 { background-size: 1623.44% 1521.88%; background-position: 66.667% 85.714%; }
+.sprite-poke-ui_PokeIcon_02_0707_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0709_00_0 { background-size: 1623.44% 1521.88%; background-position: 73.333% 85.714%; }
+.sprite-poke-ui_PokeIcon_02_0709_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0711_00_0 { background-size: 1623.44% 1521.88%; background-position: 80% 85.714%; }
+.sprite-poke-ui_PokeIcon_02_0711_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0711_01_0 { background-size: 1623.44% 1521.88%; background-position: 86.667% 0%; }
+.sprite-poke-ui_PokeIcon_02_0711_01_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0711_02_0 { background-size: 1623.44% 1521.88%; background-position: 86.667% 7.143%; }
+.sprite-poke-ui_PokeIcon_02_0711_02_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0711_03_0 { background-size: 1623.44% 1521.88%; background-position: 86.667% 14.286%; }
+.sprite-poke-ui_PokeIcon_02_0711_03_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0713_00_0 { background-size: 1623.44% 1521.88%; background-position: 86.667% 21.429%; }
+.sprite-poke-ui_PokeIcon_02_0713_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0713_01_0 { background-size: 1623.44% 1521.88%; background-position: 86.667% 28.571%; }
+.sprite-poke-ui_PokeIcon_02_0713_01_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0715_00_0 { background-size: 1623.44% 1521.88%; background-position: 86.667% 35.714%; }
+.sprite-poke-ui_PokeIcon_02_0715_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0724_00_0 { background-size: 1623.44% 1521.88%; background-position: 86.667% 42.857%; }
+.sprite-poke-ui_PokeIcon_02_0724_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0724_01_0 { background-size: 1623.44% 1521.88%; background-position: 86.667% 50%; }
+.sprite-poke-ui_PokeIcon_02_0724_01_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0727_00_0 { background-size: 1623.44% 1521.88%; background-position: 86.667% 57.143%; }
+.sprite-poke-ui_PokeIcon_02_0727_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0730_00_0 { background-size: 1623.44% 1521.88%; background-position: 86.667% 64.286%; }
+.sprite-poke-ui_PokeIcon_02_0730_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0733_00_0 { background-size: 1623.44% 1521.88%; background-position: 86.667% 71.429%; }
+.sprite-poke-ui_PokeIcon_02_0733_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0740_00_0 { background-size: 1623.44% 1521.88%; background-position: 86.667% 78.571%; }
+.sprite-poke-ui_PokeIcon_02_0740_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0745_00_0 { background-size: 1623.44% 1521.88%; background-position: 86.667% 85.714%; }
+.sprite-poke-ui_PokeIcon_02_0745_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0745_01_0 { background-size: 1623.44% 1521.88%; background-position: 0% 92.857%; }
+.sprite-poke-ui_PokeIcon_02_0745_01_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0745_02_0 { background-size: 1623.44% 1521.88%; background-position: 6.667% 92.857%; }
+.sprite-poke-ui_PokeIcon_02_0745_02_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0748_00_0 { background-size: 1623.44% 1521.88%; background-position: 13.333% 92.857%; }
+.sprite-poke-ui_PokeIcon_02_0748_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0750_00_0 { background-size: 1623.44% 1521.88%; background-position: 20% 92.857%; }
+.sprite-poke-ui_PokeIcon_02_0750_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0752_00_0 { background-size: 1623.44% 1521.88%; background-position: 26.667% 92.857%; }
+.sprite-poke-ui_PokeIcon_02_0752_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0758_00_0 { background-size: 1623.44% 1521.88%; background-position: 33.333% 92.857%; }
+.sprite-poke-ui_PokeIcon_02_0758_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0763_00_0 { background-size: 1623.44% 1521.88%; background-position: 40% 92.857%; }
+.sprite-poke-ui_PokeIcon_02_0763_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0765_00_0 { background-size: 1623.44% 1521.88%; background-position: 46.667% 92.857%; }
+.sprite-poke-ui_PokeIcon_02_0765_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0766_00_0 { background-size: 1623.44% 1521.88%; background-position: 53.333% 92.857%; }
+.sprite-poke-ui_PokeIcon_02_0766_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0778_00_0 { background-size: 1623.44% 1521.88%; background-position: 60% 92.857%; }
+.sprite-poke-ui_PokeIcon_02_0778_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0780_00_0 { background-size: 1623.44% 1521.88%; background-position: 66.667% 92.857%; }
+.sprite-poke-ui_PokeIcon_02_0780_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0784_00_0 { background-size: 1623.44% 1521.88%; background-position: 73.333% 92.857%; }
+.sprite-poke-ui_PokeIcon_02_0784_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0823_00_0 { background-size: 1623.44% 1521.88%; background-position: 80% 92.857%; }
+.sprite-poke-ui_PokeIcon_02_0823_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0841_00_0 { background-size: 1623.44% 1521.88%; background-position: 86.667% 92.857%; }
+.sprite-poke-ui_PokeIcon_02_0841_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0842_00_0 { background-size: 1623.44% 1521.88%; background-position: 93.333% 0%; }
+.sprite-poke-ui_PokeIcon_02_0842_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0844_00_0 { background-size: 1623.44% 1521.88%; background-position: 93.333% 7.143%; }
+.sprite-poke-ui_PokeIcon_02_0844_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0855_00_0 { background-size: 1623.44% 1521.88%; background-position: 93.333% 14.286%; }
+.sprite-poke-ui_PokeIcon_02_0855_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0858_00_0 { background-size: 1623.44% 1521.88%; background-position: 93.333% 21.429%; }
+.sprite-poke-ui_PokeIcon_02_0858_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0861_00_0 { background-size: 1623.44% 1521.88%; background-position: 93.333% 28.571%; }
+.sprite-poke-ui_PokeIcon_02_0861_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0866_00_0 { background-size: 1623.44% 1521.88%; background-position: 93.333% 35.714%; }
+.sprite-poke-ui_PokeIcon_02_0866_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0867_00_0 { background-size: 1623.44% 1521.88%; background-position: 93.333% 42.857%; }
+.sprite-poke-ui_PokeIcon_02_0867_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0869_00_0 { background-size: 1623.44% 1521.88%; background-position: 93.333% 50%; }
+.sprite-poke-ui_PokeIcon_02_0869_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0870_00_0 { background-size: 1623.44% 1521.88%; background-position: 93.333% 57.143%; }
+.sprite-poke-ui_PokeIcon_02_0870_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0877_00_0 { background-size: 1623.44% 1521.88%; background-position: 93.333% 64.286%; }
+.sprite-poke-ui_PokeIcon_02_0877_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0887_00_0 { background-size: 1623.44% 1521.88%; background-position: 93.333% 71.429%; }
+.sprite-poke-ui_PokeIcon_02_0887_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0899_00_0 { background-size: 1623.44% 1521.88%; background-position: 93.333% 78.571%; }
+.sprite-poke-ui_PokeIcon_02_0899_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0900_00_0 { background-size: 1623.44% 1521.88%; background-position: 93.333% 85.714%; }
+.sprite-poke-ui_PokeIcon_02_0900_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0902_00_0 { background-size: 1623.44% 1521.88%; background-position: 93.333% 92.857%; }
+.sprite-poke-ui_PokeIcon_02_0902_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0902_01_0 { background-size: 1623.44% 1521.88%; background-position: 0% 100%; }
+.sprite-poke-ui_PokeIcon_02_0902_01_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0903_00_0 { background-size: 1623.44% 1521.88%; background-position: 6.667% 100%; }
+.sprite-poke-ui_PokeIcon_02_0903_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0904_00_0 { background-size: 1623.44% 1521.88%; background-position: 13.333% 100%; }
+.sprite-poke-ui_PokeIcon_02_0904_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0908_00_0 { background-size: 1623.44% 1521.88%; background-position: 20% 100%; }
+.sprite-poke-ui_PokeIcon_02_0908_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0911_00_0 { background-size: 1623.44% 1521.88%; background-position: 26.667% 100%; }
+.sprite-poke-ui_PokeIcon_02_0911_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0914_00_0 { background-size: 1623.44% 1521.88%; background-position: 33.333% 100%; }
+.sprite-poke-ui_PokeIcon_02_0914_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0925_00_0 { background-size: 1623.44% 1521.88%; background-position: 40% 100%; }
+.sprite-poke-ui_PokeIcon_02_0925_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0934_00_0 { background-size: 1623.44% 1521.88%; background-position: 46.667% 100%; }
+.sprite-poke-ui_PokeIcon_02_0934_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0936_00_0 { background-size: 1623.44% 1521.88%; background-position: 53.333% 100%; }
+.sprite-poke-ui_PokeIcon_02_0936_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0937_00_0 { background-size: 1623.44% 1521.88%; background-position: 60% 100%; }
+.sprite-poke-ui_PokeIcon_02_0937_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0939_00_0 { background-size: 1623.44% 1521.88%; background-position: 66.667% 100%; }
+.sprite-poke-ui_PokeIcon_02_0939_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0952_00_0 { background-size: 1623.44% 1521.88%; background-position: 73.333% 100%; }
+.sprite-poke-ui_PokeIcon_02_0952_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0956_00_0 { background-size: 1623.44% 1521.88%; background-position: 80% 100%; }
+.sprite-poke-ui_PokeIcon_02_0956_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0959_00_0 { background-size: 1623.44% 1521.88%; background-position: 86.667% 100%; }
+.sprite-poke-ui_PokeIcon_02_0959_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0964_00_0 { background-size: 1623.44% 1521.88%; background-position: 93.333% 100%; }
+.sprite-poke-ui_PokeIcon_02_0964_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0968_00_0 { background-size: 1623.44% 1521.88%; background-position: 100% 0%; }
+.sprite-poke-ui_PokeIcon_02_0968_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0970_00_0 { background-size: 1623.44% 1521.88%; background-position: 100% 7.143%; }
+.sprite-poke-ui_PokeIcon_02_0970_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0972_00_0 { background-size: 1623.44% 1521.88%; background-position: 100% 14.286%; }
+.sprite-poke-ui_PokeIcon_02_0972_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0979_00_0 { background-size: 1623.44% 1521.88%; background-position: 100% 21.429%; }
+.sprite-poke-ui_PokeIcon_02_0979_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0981_00_0 { background-size: 1623.44% 1521.88%; background-position: 100% 28.571%; }
+.sprite-poke-ui_PokeIcon_02_0981_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_0983_00_0 { background-size: 1623.44% 1521.88%; background-position: 100% 35.714%; }
+.sprite-poke-ui_PokeIcon_02_0983_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_1000_00_0 { background-size: 1623.44% 1521.88%; background-position: 100% 42.857%; }
+.sprite-poke-ui_PokeIcon_02_1000_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_1013_00_0 { background-size: 1623.44% 1521.88%; background-position: 100% 50%; }
+.sprite-poke-ui_PokeIcon_02_1013_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_1018_00_0 { background-size: 1623.44% 1521.88%; background-position: 100% 57.143%; }
+.sprite-poke-ui_PokeIcon_02_1018_00_0::after { padding-top: 100%; }
+.sprite-poke-ui_PokeIcon_02_1019_00_0 { background-size: 1623.44% 1521.88%; background-position: 100% 64.286%; }
+.sprite-poke-ui_PokeIcon_02_1019_00_0::after { padding-top: 100%; }

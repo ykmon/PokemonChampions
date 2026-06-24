@@ -1,0 +1,1498 @@
+{
+  "created_at": "2026-06-24T13:56:27",
+  "project_data": "C:\\Users\\zf18116\\Documents\\PokemonChampions\\data",
+  "missing_count": 213,
+  "missing": [
+    {
+      "species_id": "no0015_pokemon",
+      "name_zh": "大针蜂",
+      "pokedex_no": "0015",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0015_00_0"
+    },
+    {
+      "species_id": "no0018_pokemon",
+      "name_zh": "大比鸟",
+      "pokedex_no": "0018",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0018_00_0"
+    },
+    {
+      "species_id": "no0024_pokemon",
+      "name_zh": "阿柏怪",
+      "pokedex_no": "0024",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0024_00_0"
+    },
+    {
+      "species_id": "no0026_pokemon",
+      "name_zh": "雷丘",
+      "pokedex_no": "0026",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0026_00_0"
+    },
+    {
+      "species_id": "no0026_pokemon_form_01",
+      "name_zh": "雷丘 (阿罗拉的样子)",
+      "pokedex_no": "0026",
+      "form_code": "01",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0026_01_0"
+    },
+    {
+      "species_id": "no0036_pokemon",
+      "name_zh": "皮可西",
+      "pokedex_no": "0036",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0036_00_0"
+    },
+    {
+      "species_id": "no0038_pokemon",
+      "name_zh": "九尾",
+      "pokedex_no": "0038",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0038_00_0"
+    },
+    {
+      "species_id": "no0038_pokemon_form_01",
+      "name_zh": "九尾 (阿罗拉的样子)",
+      "pokedex_no": "0038",
+      "form_code": "01",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0038_01_0"
+    },
+    {
+      "species_id": "no0045_pokemon",
+      "name_zh": "霸王花",
+      "pokedex_no": "0045",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0045_00_0"
+    },
+    {
+      "species_id": "no0059_pokemon",
+      "name_zh": "风速狗",
+      "pokedex_no": "0059",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0059_00_0"
+    },
+    {
+      "species_id": "no0059_pokemon_form_01",
+      "name_zh": "风速狗 (洗翠的样子)",
+      "pokedex_no": "0059",
+      "form_code": "01",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0059_01_0"
+    },
+    {
+      "species_id": "no0065_pokemon",
+      "name_zh": "胡地",
+      "pokedex_no": "0065",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0065_00_0"
+    },
+    {
+      "species_id": "no0068_pokemon",
+      "name_zh": "怪力",
+      "pokedex_no": "0068",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0068_00_0"
+    },
+    {
+      "species_id": "no0071_pokemon",
+      "name_zh": "大食花",
+      "pokedex_no": "0071",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0071_00_0"
+    },
+    {
+      "species_id": "no0080_pokemon",
+      "name_zh": "呆壳兽",
+      "pokedex_no": "0080",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0080_00_0"
+    },
+    {
+      "species_id": "no0080_pokemon_form_02",
+      "name_zh": "呆壳兽 (伽勒尔的样子)",
+      "pokedex_no": "0080",
+      "form_code": "02",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0080_02_0"
+    },
+    {
+      "species_id": "no0115_pokemon",
+      "name_zh": "袋兽",
+      "pokedex_no": "0115",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0115_00_0"
+    },
+    {
+      "species_id": "no0121_pokemon",
+      "name_zh": "宝石海星",
+      "pokedex_no": "0121",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0121_00_0"
+    },
+    {
+      "species_id": "no0127_pokemon",
+      "name_zh": "凯罗斯",
+      "pokedex_no": "0127",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0127_00_0"
+    },
+    {
+      "species_id": "no0128_pokemon",
+      "name_zh": "肯泰罗",
+      "pokedex_no": "0128",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0128_00_0"
+    },
+    {
+      "species_id": "no0128_pokemon_form_01",
+      "name_zh": "肯泰罗 (帕底亚的样子・斗战种)",
+      "pokedex_no": "0128",
+      "form_code": "01",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0128_01_0"
+    },
+    {
+      "species_id": "no0128_pokemon_form_02",
+      "name_zh": "肯泰罗 (帕底亚的样子・火炽种)",
+      "pokedex_no": "0128",
+      "form_code": "02",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0128_02_0"
+    },
+    {
+      "species_id": "no0128_pokemon_form_03",
+      "name_zh": "肯泰罗 (帕底亚的样子・水澜种)",
+      "pokedex_no": "0128",
+      "form_code": "03",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0128_03_0"
+    },
+    {
+      "species_id": "no0132_pokemon",
+      "name_zh": "百变怪",
+      "pokedex_no": "0132",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0132_00_0"
+    },
+    {
+      "species_id": "no0134_pokemon",
+      "name_zh": "水伊布",
+      "pokedex_no": "0134",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0134_00_0"
+    },
+    {
+      "species_id": "no0135_pokemon",
+      "name_zh": "雷伊布",
+      "pokedex_no": "0135",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0135_00_0"
+    },
+    {
+      "species_id": "no0136_pokemon",
+      "name_zh": "火伊布",
+      "pokedex_no": "0136",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0136_00_0"
+    },
+    {
+      "species_id": "no0142_pokemon",
+      "name_zh": "化石翼龙",
+      "pokedex_no": "0142",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0142_00_0"
+    },
+    {
+      "species_id": "no0143_pokemon",
+      "name_zh": "卡比兽",
+      "pokedex_no": "0143",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0143_00_0"
+    },
+    {
+      "species_id": "no0157_pokemon",
+      "name_zh": "火暴兽",
+      "pokedex_no": "0157",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0157_00_0"
+    },
+    {
+      "species_id": "no0157_pokemon_form_01",
+      "name_zh": "火暴兽 (洗翠的样子)",
+      "pokedex_no": "0157",
+      "form_code": "01",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0157_01_0"
+    },
+    {
+      "species_id": "no0160_pokemon",
+      "name_zh": "大力鳄",
+      "pokedex_no": "0160",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0160_00_0"
+    },
+    {
+      "species_id": "no0168_pokemon",
+      "name_zh": "阿利多斯",
+      "pokedex_no": "0168",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0168_00_0"
+    },
+    {
+      "species_id": "no0181_pokemon",
+      "name_zh": "电龙",
+      "pokedex_no": "0181",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0181_00_0"
+    },
+    {
+      "species_id": "no0184_pokemon",
+      "name_zh": "玛力露丽",
+      "pokedex_no": "0184",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0184_00_0"
+    },
+    {
+      "species_id": "no0186_pokemon",
+      "name_zh": "蚊香蛙皇",
+      "pokedex_no": "0186",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0186_00_0"
+    },
+    {
+      "species_id": "no0196_pokemon",
+      "name_zh": "太阳伊布",
+      "pokedex_no": "0196",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0196_00_0"
+    },
+    {
+      "species_id": "no0197_pokemon",
+      "name_zh": "月亮伊布",
+      "pokedex_no": "0197",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0197_00_0"
+    },
+    {
+      "species_id": "no0199_pokemon",
+      "name_zh": "呆呆王",
+      "pokedex_no": "0199",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0199_00_0"
+    },
+    {
+      "species_id": "no0199_pokemon_form_01",
+      "name_zh": "呆呆王 (伽勒尔的样子)",
+      "pokedex_no": "0199",
+      "form_code": "01",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0199_01_0"
+    },
+    {
+      "species_id": "no0205_pokemon",
+      "name_zh": "佛烈托斯",
+      "pokedex_no": "0205",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0205_00_0"
+    },
+    {
+      "species_id": "no0208_pokemon",
+      "name_zh": "大钢蛇",
+      "pokedex_no": "0208",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0208_00_0"
+    },
+    {
+      "species_id": "no0211_pokemon",
+      "name_zh": "千针鱼",
+      "pokedex_no": "0211",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0211_00_0"
+    },
+    {
+      "species_id": "no0212_pokemon",
+      "name_zh": "巨钳螳螂",
+      "pokedex_no": "0212",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0212_00_0"
+    },
+    {
+      "species_id": "no0214_pokemon",
+      "name_zh": "赫拉克罗斯",
+      "pokedex_no": "0214",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0214_00_0"
+    },
+    {
+      "species_id": "no0227_pokemon",
+      "name_zh": "盔甲鸟",
+      "pokedex_no": "0227",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0227_00_0"
+    },
+    {
+      "species_id": "no0229_pokemon",
+      "name_zh": "黑鲁加",
+      "pokedex_no": "0229",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0229_00_0"
+    },
+    {
+      "species_id": "no0248_pokemon",
+      "name_zh": "班基拉斯",
+      "pokedex_no": "0248",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0248_00_0"
+    },
+    {
+      "species_id": "no0257_pokemon",
+      "name_zh": "火焰鸡",
+      "pokedex_no": "0257",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0257_00_0"
+    },
+    {
+      "species_id": "no0282_pokemon",
+      "name_zh": "沙奈朵",
+      "pokedex_no": "0282",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0282_00_0"
+    },
+    {
+      "species_id": "no0302_pokemon",
+      "name_zh": "勾魂眼",
+      "pokedex_no": "0302",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0302_00_0"
+    },
+    {
+      "species_id": "no0303_pokemon",
+      "name_zh": "大嘴娃",
+      "pokedex_no": "0303",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0303_00_0"
+    },
+    {
+      "species_id": "no0306_pokemon",
+      "name_zh": "波士可多拉",
+      "pokedex_no": "0306",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0306_00_0"
+    },
+    {
+      "species_id": "no0308_pokemon",
+      "name_zh": "恰雷姆",
+      "pokedex_no": "0308",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0308_00_0"
+    },
+    {
+      "species_id": "no0310_pokemon",
+      "name_zh": "雷电兽",
+      "pokedex_no": "0310",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0310_00_0"
+    },
+    {
+      "species_id": "no0319_pokemon",
+      "name_zh": "巨牙鲨",
+      "pokedex_no": "0319",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0319_00_0"
+    },
+    {
+      "species_id": "no0323_pokemon",
+      "name_zh": "喷火驼",
+      "pokedex_no": "0323",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0323_00_0"
+    },
+    {
+      "species_id": "no0324_pokemon",
+      "name_zh": "煤炭龟",
+      "pokedex_no": "0324",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0324_00_0"
+    },
+    {
+      "species_id": "no0334_pokemon",
+      "name_zh": "七夕青鸟",
+      "pokedex_no": "0334",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0334_00_0"
+    },
+    {
+      "species_id": "no0350_pokemon",
+      "name_zh": "美纳斯",
+      "pokedex_no": "0350",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0350_00_0"
+    },
+    {
+      "species_id": "no0351_pokemon",
+      "name_zh": "飘浮泡泡",
+      "pokedex_no": "0351",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0351_00_0"
+    },
+    {
+      "species_id": "no0354_pokemon",
+      "name_zh": "诅咒娃娃",
+      "pokedex_no": "0354",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0354_00_0"
+    },
+    {
+      "species_id": "no0358_pokemon",
+      "name_zh": "风铃铃",
+      "pokedex_no": "0358",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0358_00_0"
+    },
+    {
+      "species_id": "no0359_pokemon",
+      "name_zh": "阿勃梭鲁",
+      "pokedex_no": "0359",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0359_00_0"
+    },
+    {
+      "species_id": "no0362_pokemon",
+      "name_zh": "冰鬼护",
+      "pokedex_no": "0362",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0362_00_0"
+    },
+    {
+      "species_id": "no0389_pokemon",
+      "name_zh": "土台龟",
+      "pokedex_no": "0389",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0389_00_0"
+    },
+    {
+      "species_id": "no0392_pokemon",
+      "name_zh": "烈焰猴",
+      "pokedex_no": "0392",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0392_00_0"
+    },
+    {
+      "species_id": "no0395_pokemon",
+      "name_zh": "帝王拿波",
+      "pokedex_no": "0395",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0395_00_0"
+    },
+    {
+      "species_id": "no0405_pokemon",
+      "name_zh": "伦琴猫",
+      "pokedex_no": "0405",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0405_00_0"
+    },
+    {
+      "species_id": "no0407_pokemon",
+      "name_zh": "罗丝雷朵",
+      "pokedex_no": "0407",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0407_00_0"
+    },
+    {
+      "species_id": "no0409_pokemon",
+      "name_zh": "战槌龙",
+      "pokedex_no": "0409",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0409_00_0"
+    },
+    {
+      "species_id": "no0411_pokemon",
+      "name_zh": "护城龙",
+      "pokedex_no": "0411",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0411_00_0"
+    },
+    {
+      "species_id": "no0428_pokemon",
+      "name_zh": "长耳兔",
+      "pokedex_no": "0428",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0428_00_0"
+    },
+    {
+      "species_id": "no0442_pokemon",
+      "name_zh": "花岩怪",
+      "pokedex_no": "0442",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0442_00_0"
+    },
+    {
+      "species_id": "no0450_pokemon",
+      "name_zh": "河马兽",
+      "pokedex_no": "0450",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0450_00_0"
+    },
+    {
+      "species_id": "no0454_pokemon",
+      "name_zh": "毒骷蛙",
+      "pokedex_no": "0454",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0454_00_0"
+    },
+    {
+      "species_id": "no0460_pokemon",
+      "name_zh": "暴雪王",
+      "pokedex_no": "0460",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0460_00_0"
+    },
+    {
+      "species_id": "no0461_pokemon",
+      "name_zh": "玛狃拉",
+      "pokedex_no": "0461",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0461_00_0"
+    },
+    {
+      "species_id": "no0464_pokemon",
+      "name_zh": "超甲狂犀",
+      "pokedex_no": "0464",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0464_00_0"
+    },
+    {
+      "species_id": "no0470_pokemon",
+      "name_zh": "叶伊布",
+      "pokedex_no": "0470",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0470_00_0"
+    },
+    {
+      "species_id": "no0471_pokemon",
+      "name_zh": "冰伊布",
+      "pokedex_no": "0471",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0471_00_0"
+    },
+    {
+      "species_id": "no0472_pokemon",
+      "name_zh": "天蝎王",
+      "pokedex_no": "0472",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0472_00_0"
+    },
+    {
+      "species_id": "no0473_pokemon",
+      "name_zh": "象牙猪",
+      "pokedex_no": "0473",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0473_00_0"
+    },
+    {
+      "species_id": "no0475_pokemon",
+      "name_zh": "艾路雷朵",
+      "pokedex_no": "0475",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0475_00_0"
+    },
+    {
+      "species_id": "no0478_pokemon",
+      "name_zh": "雪妖女",
+      "pokedex_no": "0478",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0478_00_0"
+    },
+    {
+      "species_id": "no0479_pokemon",
+      "name_zh": "洛托姆 (洛托姆的样子)",
+      "pokedex_no": "0479",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0479_00_0"
+    },
+    {
+      "species_id": "no0479_pokemon_form_01",
+      "name_zh": "洛托姆 (加热洛托姆)",
+      "pokedex_no": "0479",
+      "form_code": "01",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0479_01_0"
+    },
+    {
+      "species_id": "no0479_pokemon_form_02",
+      "name_zh": "洛托姆 (清洗洛托姆)",
+      "pokedex_no": "0479",
+      "form_code": "02",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0479_02_0"
+    },
+    {
+      "species_id": "no0479_pokemon_form_03",
+      "name_zh": "洛托姆 (结冰洛托姆)",
+      "pokedex_no": "0479",
+      "form_code": "03",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0479_03_0"
+    },
+    {
+      "species_id": "no0479_pokemon_form_04",
+      "name_zh": "洛托姆 (旋转洛托姆)",
+      "pokedex_no": "0479",
+      "form_code": "04",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0479_04_0"
+    },
+    {
+      "species_id": "no0479_pokemon_form_05",
+      "name_zh": "洛托姆 (切割洛托姆)",
+      "pokedex_no": "0479",
+      "form_code": "05",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0479_05_0"
+    },
+    {
+      "species_id": "no0497_pokemon",
+      "name_zh": "君主蛇",
+      "pokedex_no": "0497",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0497_00_0"
+    },
+    {
+      "species_id": "no0500_pokemon",
+      "name_zh": "炎武王",
+      "pokedex_no": "0500",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0500_00_0"
+    },
+    {
+      "species_id": "no0503_pokemon",
+      "name_zh": "大剑鬼",
+      "pokedex_no": "0503",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0503_00_0"
+    },
+    {
+      "species_id": "no0503_pokemon_form_01",
+      "name_zh": "大剑鬼 (洗翠的样子)",
+      "pokedex_no": "0503",
+      "form_code": "01",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0503_01_0"
+    },
+    {
+      "species_id": "no0505_pokemon",
+      "name_zh": "步哨鼠",
+      "pokedex_no": "0505",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0505_00_0"
+    },
+    {
+      "species_id": "no0510_pokemon",
+      "name_zh": "酷豹",
+      "pokedex_no": "0510",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0510_00_0"
+    },
+    {
+      "species_id": "no0512_pokemon",
+      "name_zh": "花椰猿",
+      "pokedex_no": "0512",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0512_00_0"
+    },
+    {
+      "species_id": "no0514_pokemon",
+      "name_zh": "爆香猿",
+      "pokedex_no": "0514",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0514_00_0"
+    },
+    {
+      "species_id": "no0516_pokemon",
+      "name_zh": "冷水猿",
+      "pokedex_no": "0516",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0516_00_0"
+    },
+    {
+      "species_id": "no0518_pokemon",
+      "name_zh": "梦梦蚀",
+      "pokedex_no": "0518",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0518_00_0"
+    },
+    {
+      "species_id": "no0530_pokemon",
+      "name_zh": "龙头地鼠",
+      "pokedex_no": "0530",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0530_00_0"
+    },
+    {
+      "species_id": "no0531_pokemon",
+      "name_zh": "差不多娃娃",
+      "pokedex_no": "0531",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0531_00_0"
+    },
+    {
+      "species_id": "no0534_pokemon",
+      "name_zh": "修建老匠",
+      "pokedex_no": "0534",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0534_00_0"
+    },
+    {
+      "species_id": "no0545_pokemon",
+      "name_zh": "蜈蚣王",
+      "pokedex_no": "0545",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0545_00_0"
+    },
+    {
+      "species_id": "no0547_pokemon",
+      "name_zh": "风妖精",
+      "pokedex_no": "0547",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0547_00_0"
+    },
+    {
+      "species_id": "no0553_pokemon",
+      "name_zh": "流氓鳄",
+      "pokedex_no": "0553",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0553_00_0"
+    },
+    {
+      "species_id": "no0560_pokemon",
+      "name_zh": "头巾混混",
+      "pokedex_no": "0560",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0560_00_0"
+    },
+    {
+      "species_id": "no0563_pokemon",
+      "name_zh": "迭失棺",
+      "pokedex_no": "0563",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0563_00_0"
+    },
+    {
+      "species_id": "no0569_pokemon",
+      "name_zh": "灰尘山",
+      "pokedex_no": "0569",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0569_00_0"
+    },
+    {
+      "species_id": "no0571_pokemon",
+      "name_zh": "索罗亚克",
+      "pokedex_no": "0571",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0571_00_0"
+    },
+    {
+      "species_id": "no0571_pokemon_form_01",
+      "name_zh": "索罗亚克 (洗翠的样子)",
+      "pokedex_no": "0571",
+      "form_code": "01",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0571_01_0"
+    },
+    {
+      "species_id": "no0579_pokemon",
+      "name_zh": "人造细胞卵",
+      "pokedex_no": "0579",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0579_00_0"
+    },
+    {
+      "species_id": "no0584_pokemon",
+      "name_zh": "双倍多多冰",
+      "pokedex_no": "0584",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0584_00_0"
+    },
+    {
+      "species_id": "no0587_pokemon",
+      "name_zh": "电飞鼠",
+      "pokedex_no": "0587",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0587_00_0"
+    },
+    {
+      "species_id": "no0604_pokemon",
+      "name_zh": "麻麻鳗鱼王",
+      "pokedex_no": "0604",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0604_00_0"
+    },
+    {
+      "species_id": "no0609_pokemon",
+      "name_zh": "水晶灯火灵",
+      "pokedex_no": "0609",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0609_00_0"
+    },
+    {
+      "species_id": "no0614_pokemon",
+      "name_zh": "冻原熊",
+      "pokedex_no": "0614",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0614_00_0"
+    },
+    {
+      "species_id": "no0618_pokemon",
+      "name_zh": "泥巴鱼",
+      "pokedex_no": "0618",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0618_00_0"
+    },
+    {
+      "species_id": "no0618_pokemon_form_01",
+      "name_zh": "泥巴鱼 (伽勒尔的样子)",
+      "pokedex_no": "0618",
+      "form_code": "01",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0618_01_0"
+    },
+    {
+      "species_id": "no0623_pokemon",
+      "name_zh": "泥偶巨人",
+      "pokedex_no": "0623",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0623_00_0"
+    },
+    {
+      "species_id": "no0635_pokemon",
+      "name_zh": "三首恶龙",
+      "pokedex_no": "0635",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0635_00_0"
+    },
+    {
+      "species_id": "no0637_pokemon",
+      "name_zh": "火神蛾",
+      "pokedex_no": "0637",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0637_00_0"
+    },
+    {
+      "species_id": "no0652_pokemon",
+      "name_zh": "布里卡隆",
+      "pokedex_no": "0652",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0652_00_0"
+    },
+    {
+      "species_id": "no0655_pokemon",
+      "name_zh": "妖火红狐",
+      "pokedex_no": "0655",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0655_00_0"
+    },
+    {
+      "species_id": "no0660_pokemon",
+      "name_zh": "掘地兔",
+      "pokedex_no": "0660",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0660_00_0"
+    },
+    {
+      "species_id": "no0663_pokemon",
+      "name_zh": "烈箭鹰",
+      "pokedex_no": "0663",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0663_00_0"
+    },
+    {
+      "species_id": "no0666_pokemon_form_18",
+      "name_zh": "彩粉蝶",
+      "pokedex_no": "0666",
+      "form_code": "18",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0666_18_0"
+    },
+    {
+      "species_id": "no0668_pokemon",
+      "name_zh": "火炎狮",
+      "pokedex_no": "0668",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0668_00_0"
+    },
+    {
+      "species_id": "no0670_pokemon_form_05",
+      "name_zh": "花叶蒂",
+      "pokedex_no": "0670",
+      "form_code": "05",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0670_05_0"
+    },
+    {
+      "species_id": "no0671_pokemon",
+      "name_zh": "花洁夫人",
+      "pokedex_no": "0671",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0671_00_0"
+    },
+    {
+      "species_id": "no0675_pokemon",
+      "name_zh": "霸道熊猫",
+      "pokedex_no": "0675",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0675_00_0"
+    },
+    {
+      "species_id": "no0676_pokemon",
+      "name_zh": "多丽米亚",
+      "pokedex_no": "0676",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0676_00_0"
+    },
+    {
+      "species_id": "no0678_pokemon",
+      "name_zh": "超能妙喵 (雄性的样子)",
+      "pokedex_no": "0678",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0678_00_0"
+    },
+    {
+      "species_id": "no0678_pokemon_form_01",
+      "name_zh": "超能妙喵 (雌性的样子)",
+      "pokedex_no": "0678",
+      "form_code": "01",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0678_01_0"
+    },
+    {
+      "species_id": "no0681_pokemon",
+      "name_zh": "坚盾剑怪",
+      "pokedex_no": "0681",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0681_00_0"
+    },
+    {
+      "species_id": "no0683_pokemon",
+      "name_zh": "芳香精",
+      "pokedex_no": "0683",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0683_00_0"
+    },
+    {
+      "species_id": "no0685_pokemon",
+      "name_zh": "胖甜妮",
+      "pokedex_no": "0685",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0685_00_0"
+    },
+    {
+      "species_id": "no0687_pokemon",
+      "name_zh": "乌贼王",
+      "pokedex_no": "0687",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0687_00_0"
+    },
+    {
+      "species_id": "no0689_pokemon",
+      "name_zh": "龟足巨铠",
+      "pokedex_no": "0689",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0689_00_0"
+    },
+    {
+      "species_id": "no0691_pokemon",
+      "name_zh": "毒藻龙",
+      "pokedex_no": "0691",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0691_00_0"
+    },
+    {
+      "species_id": "no0693_pokemon",
+      "name_zh": "钢炮臂虾",
+      "pokedex_no": "0693",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0693_00_0"
+    },
+    {
+      "species_id": "no0695_pokemon",
+      "name_zh": "光电伞蜥",
+      "pokedex_no": "0695",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0695_00_0"
+    },
+    {
+      "species_id": "no0697_pokemon",
+      "name_zh": "怪颚龙",
+      "pokedex_no": "0697",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0697_00_0"
+    },
+    {
+      "species_id": "no0699_pokemon",
+      "name_zh": "冰雪巨龙",
+      "pokedex_no": "0699",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0699_00_0"
+    },
+    {
+      "species_id": "no0701_pokemon",
+      "name_zh": "摔角鹰人",
+      "pokedex_no": "0701",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0701_00_0"
+    },
+    {
+      "species_id": "no0702_pokemon",
+      "name_zh": "咚咚鼠",
+      "pokedex_no": "0702",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0702_00_0"
+    },
+    {
+      "species_id": "no0706_pokemon",
+      "name_zh": "黏美龙",
+      "pokedex_no": "0706",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0706_00_0"
+    },
+    {
+      "species_id": "no0706_pokemon_form_01",
+      "name_zh": "黏美龙 (洗翠的样子)",
+      "pokedex_no": "0706",
+      "form_code": "01",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0706_01_0"
+    },
+    {
+      "species_id": "no0707_pokemon",
+      "name_zh": "钥圈儿",
+      "pokedex_no": "0707",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0707_00_0"
+    },
+    {
+      "species_id": "no0709_pokemon",
+      "name_zh": "朽木妖",
+      "pokedex_no": "0709",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0709_00_0"
+    },
+    {
+      "species_id": "no0711_pokemon",
+      "name_zh": "南瓜怪人 (中颗种)",
+      "pokedex_no": "0711",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0711_00_0"
+    },
+    {
+      "species_id": "no0711_pokemon_form_01",
+      "name_zh": "南瓜怪人 (小颗种)",
+      "pokedex_no": "0711",
+      "form_code": "01",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0711_01_0"
+    },
+    {
+      "species_id": "no0711_pokemon_form_02",
+      "name_zh": "南瓜怪人 (大颗种)",
+      "pokedex_no": "0711",
+      "form_code": "02",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0711_02_0"
+    },
+    {
+      "species_id": "no0711_pokemon_form_03",
+      "name_zh": "南瓜怪人 (巨颗种)",
+      "pokedex_no": "0711",
+      "form_code": "03",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0711_03_0"
+    },
+    {
+      "species_id": "no0713_pokemon",
+      "name_zh": "冰岩怪",
+      "pokedex_no": "0713",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0713_00_0"
+    },
+    {
+      "species_id": "no0713_pokemon_form_01",
+      "name_zh": "冰岩怪 (洗翠的样子)",
+      "pokedex_no": "0713",
+      "form_code": "01",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0713_01_0"
+    },
+    {
+      "species_id": "no0715_pokemon",
+      "name_zh": "音波龙",
+      "pokedex_no": "0715",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0715_00_0"
+    },
+    {
+      "species_id": "no0724_pokemon",
+      "name_zh": "狙射树枭",
+      "pokedex_no": "0724",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0724_00_0"
+    },
+    {
+      "species_id": "no0724_pokemon_form_01",
+      "name_zh": "狙射树枭 (洗翠的样子)",
+      "pokedex_no": "0724",
+      "form_code": "01",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0724_01_0"
+    },
+    {
+      "species_id": "no0730_pokemon",
+      "name_zh": "西狮海壬",
+      "pokedex_no": "0730",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0730_00_0"
+    },
+    {
+      "species_id": "no0733_pokemon",
+      "name_zh": "铳嘴大鸟",
+      "pokedex_no": "0733",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0733_00_0"
+    },
+    {
+      "species_id": "no0740_pokemon",
+      "name_zh": "好胜毛蟹",
+      "pokedex_no": "0740",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0740_00_0"
+    },
+    {
+      "species_id": "no0745_pokemon",
+      "name_zh": "鬃岩狼人 (白昼的样子)",
+      "pokedex_no": "0745",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0745_00_0"
+    },
+    {
+      "species_id": "no0745_pokemon_form_01",
+      "name_zh": "鬃岩狼人 (黑夜的样子)",
+      "pokedex_no": "0745",
+      "form_code": "01",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0745_01_0"
+    },
+    {
+      "species_id": "no0745_pokemon_form_02",
+      "name_zh": "鬃岩狼人 (黄昏的样子)",
+      "pokedex_no": "0745",
+      "form_code": "02",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0745_02_0"
+    },
+    {
+      "species_id": "no0748_pokemon",
+      "name_zh": "超坏星",
+      "pokedex_no": "0748",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0748_00_0"
+    },
+    {
+      "species_id": "no0750_pokemon",
+      "name_zh": "重泥挽马",
+      "pokedex_no": "0750",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0750_00_0"
+    },
+    {
+      "species_id": "no0752_pokemon",
+      "name_zh": "滴蛛霸",
+      "pokedex_no": "0752",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0752_00_0"
+    },
+    {
+      "species_id": "no0758_pokemon",
+      "name_zh": "焰后蜥",
+      "pokedex_no": "0758",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0758_00_0"
+    },
+    {
+      "species_id": "no0763_pokemon",
+      "name_zh": "甜冷美后",
+      "pokedex_no": "0763",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0763_00_0"
+    },
+    {
+      "species_id": "no0765_pokemon",
+      "name_zh": "智挥猩",
+      "pokedex_no": "0765",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0765_00_0"
+    },
+    {
+      "species_id": "no0766_pokemon",
+      "name_zh": "投掷猴",
+      "pokedex_no": "0766",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0766_00_0"
+    },
+    {
+      "species_id": "no0780_pokemon",
+      "name_zh": "老翁龙",
+      "pokedex_no": "0780",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0780_00_0"
+    },
+    {
+      "species_id": "no0784_pokemon",
+      "name_zh": "杖尾鳞甲龙",
+      "pokedex_no": "0784",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0784_00_0"
+    },
+    {
+      "species_id": "no0823_pokemon",
+      "name_zh": "钢铠鸦",
+      "pokedex_no": "0823",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0823_00_0"
+    },
+    {
+      "species_id": "no0841_pokemon",
+      "name_zh": "苹裹龙",
+      "pokedex_no": "0841",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0841_00_0"
+    },
+    {
+      "species_id": "no0842_pokemon",
+      "name_zh": "丰蜜龙",
+      "pokedex_no": "0842",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0842_00_0"
+    },
+    {
+      "species_id": "no0844_pokemon",
+      "name_zh": "沙螺蟒",
+      "pokedex_no": "0844",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0844_00_0"
+    },
+    {
+      "species_id": "no0855_pokemon",
+      "name_zh": "怖思壶",
+      "pokedex_no": "0855",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0855_00_0"
+    },
+    {
+      "species_id": "no0858_pokemon",
+      "name_zh": "布莉姆温",
+      "pokedex_no": "0858",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0858_00_0"
+    },
+    {
+      "species_id": "no0861_pokemon",
+      "name_zh": "长毛巨魔",
+      "pokedex_no": "0861",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0861_00_0"
+    },
+    {
+      "species_id": "no0866_pokemon",
+      "name_zh": "踏冰人偶",
+      "pokedex_no": "0866",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0866_00_0"
+    },
+    {
+      "species_id": "no0867_pokemon",
+      "name_zh": "迭失板",
+      "pokedex_no": "0867",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0867_00_0"
+    },
+    {
+      "species_id": "no0869_pokemon",
+      "name_zh": "霜奶仙",
+      "pokedex_no": "0869",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0869_00_0"
+    },
+    {
+      "species_id": "no0870_pokemon",
+      "name_zh": "列阵兵",
+      "pokedex_no": "0870",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0870_00_0"
+    },
+    {
+      "species_id": "no0877_pokemon",
+      "name_zh": "莫鲁贝可",
+      "pokedex_no": "0877",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0877_00_0"
+    },
+    {
+      "species_id": "no0887_pokemon",
+      "name_zh": "多龙巴鲁托",
+      "pokedex_no": "0887",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0887_00_0"
+    },
+    {
+      "species_id": "no0899_pokemon",
+      "name_zh": "诡角鹿",
+      "pokedex_no": "0899",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0899_00_0"
+    },
+    {
+      "species_id": "no0900_pokemon",
+      "name_zh": "劈斧螳螂",
+      "pokedex_no": "0900",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0900_00_0"
+    },
+    {
+      "species_id": "no0902_pokemon",
+      "name_zh": "幽尾玄鱼 (雄性的样子)",
+      "pokedex_no": "0902",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0902_00_0"
+    },
+    {
+      "species_id": "no0902_pokemon_form_01",
+      "name_zh": "幽尾玄鱼 (雌性的样子)",
+      "pokedex_no": "0902",
+      "form_code": "01",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0902_01_0"
+    },
+    {
+      "species_id": "no0903_pokemon",
+      "name_zh": "大狃拉",
+      "pokedex_no": "0903",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0903_00_0"
+    },
+    {
+      "species_id": "no0904_pokemon",
+      "name_zh": "万针鱼",
+      "pokedex_no": "0904",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0904_00_0"
+    },
+    {
+      "species_id": "no0911_pokemon",
+      "name_zh": "骨纹巨声鳄",
+      "pokedex_no": "0911",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0911_00_0"
+    },
+    {
+      "species_id": "no0914_pokemon",
+      "name_zh": "狂欢浪舞鸭",
+      "pokedex_no": "0914",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0914_00_0"
+    },
+    {
+      "species_id": "no0925_pokemon",
+      "name_zh": "一家鼠",
+      "pokedex_no": "0925",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0925_00_0"
+    },
+    {
+      "species_id": "no0934_pokemon",
+      "name_zh": "盐石巨灵",
+      "pokedex_no": "0934",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0934_00_0"
+    },
+    {
+      "species_id": "no0936_pokemon",
+      "name_zh": "红莲铠骑",
+      "pokedex_no": "0936",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0936_00_0"
+    },
+    {
+      "species_id": "no0939_pokemon",
+      "name_zh": "电肚蛙",
+      "pokedex_no": "0939",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0939_00_0"
+    },
+    {
+      "species_id": "no0952_pokemon",
+      "name_zh": "狠辣椒",
+      "pokedex_no": "0952",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0952_00_0"
+    },
+    {
+      "species_id": "no0956_pokemon",
+      "name_zh": "超能艳鸵",
+      "pokedex_no": "0956",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0956_00_0"
+    },
+    {
+      "species_id": "no0959_pokemon",
+      "name_zh": "巨锻匠",
+      "pokedex_no": "0959",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0959_00_0"
+    },
+    {
+      "species_id": "no0964_pokemon",
+      "name_zh": "海豚侠",
+      "pokedex_no": "0964",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0964_00_0"
+    },
+    {
+      "species_id": "no0968_pokemon",
+      "name_zh": "拖拖蚓",
+      "pokedex_no": "0968",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0968_00_0"
+    },
+    {
+      "species_id": "no0970_pokemon",
+      "name_zh": "晶光花",
+      "pokedex_no": "0970",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0970_00_0"
+    },
+    {
+      "species_id": "no0972_pokemon",
+      "name_zh": "墓扬犬",
+      "pokedex_no": "0972",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0972_00_0"
+    },
+    {
+      "species_id": "no0979_pokemon",
+      "name_zh": "弃世猴",
+      "pokedex_no": "0979",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0979_00_0"
+    },
+    {
+      "species_id": "no0981_pokemon",
+      "name_zh": "奇麒麟",
+      "pokedex_no": "0981",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0981_00_0"
+    },
+    {
+      "species_id": "no0983_pokemon",
+      "name_zh": "仆刀将军",
+      "pokedex_no": "0983",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_0983_00_0"
+    },
+    {
+      "species_id": "no1000_pokemon",
+      "name_zh": "赛富豪",
+      "pokedex_no": "1000",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_1000_00_0"
+    },
+    {
+      "species_id": "no1013_pokemon",
+      "name_zh": "来悲粗茶",
+      "pokedex_no": "1013",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_1013_00_0"
+    },
+    {
+      "species_id": "no1019_pokemon",
+      "name_zh": "蜜集大蛇",
+      "pokedex_no": "1019",
+      "form_code": "00",
+      "css_class": "sprite-poke-ui_PokeIcon_02_1019_00_0"
+    }
+  ]
+}

@@ -1,0 +1,161 @@
+adb_path = "adb"
+device_serial = ""
+capture_interval_ms = 1200
+language = "zh"
+default_format = "singles63"
+data_dir = "data"
+screenshots_dir = "screenshots"
+
+[ui]
+always_on_top = true
+compact = false
+
+[roi.self_name]
+x = 0
+y = 0
+width = 0
+height = 0
+
+[roi.opponent_name]
+x = 0
+y = 0
+width = 0
+height = 0
+
+[roi.self_hp]
+x = 0
+y = 0
+width = 0
+height = 0
+
+[roi.opponent_hp]
+x = 0
+y = 0
+width = 0
+height = 0
+
+[roi.turn]
+x = 0
+y = 0
+width = 0
+height = 0
+
+[roi.player_preview_1]
+x = 0
+y = 0
+width = 0
+height = 0
+
+[roi.player_preview_2]
+x = 0
+y = 0
+width = 0
+height = 0
+
+[roi.player_preview_3]
+x = 0
+y = 0
+width = 0
+height = 0
+
+[roi.player_preview_4]
+x = 0
+y = 0
+width = 0
+height = 0
+
+[roi.player_preview_5]
+x = 0
+y = 0
+width = 0
+height = 0
+
+[roi.player_preview_6]
+x = 0
+y = 0
+width = 0
+height = 0
+
+[roi.opponent_preview_1]
+x = 1375
+y = 144
+width = 150
+height = 115
+
+[roi.opponent_preview_2]
+x = 1375
+y = 274
+width = 150
+height = 115
+
+[roi.opponent_preview_3]
+x = 1375
+y = 404
+width = 150
+height = 115
+
+[roi.opponent_preview_4]
+x = 1375
+y = 534
+width = 150
+height = 115
+
+[roi.opponent_preview_5]
+x = 1375
+y = 664
+width = 150
+height = 115
+
+[roi.opponent_preview_6]
+x = 1375
+y = 794
+width = 150
+height = 115
+
+[roi.player_active_1]
+x = 0
+y = 0
+width = 0
+height = 0
+
+[roi.player_active_2]
+x = 0
+y = 0
+width = 0
+height = 0
+
+[roi.opponent_active_1]
+x = 0
+y = 0
+width = 0
+height = 0
+
+[roi.opponent_active_2]
+x = 0
+y = 0
+width = 0
+height = 0
+
+[roi.player_active_1_hp]
+x = 0
+y = 0
+width = 0
+height = 0
+
+[roi.player_active_2_hp]
+x = 0
+y = 0
+width = 0
+height = 0
+
+[roi.opponent_active_1_hp]
+x = 0
+y = 0
+width = 0
+height = 0
+
+[roi.opponent_active_2_hp]
+x = 0
+y = 0
+width = 0
+height = 0
