@@ -7,6 +7,7 @@ from .adb import AdbClient, AdbError
 from .config import AppConfig, ROI_KEYS, save_config
 from .damage import DamageCalculator
 from .data_loader import DataRepository
+from .health import build_health_report
 from .models import (
     BattleFormat,
     BattleSnapshot,
@@ -47,6 +48,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self._timer = QtCore.QTimer(self)
         self._timer.timeout.connect(self.refresh_capture)
         self._timer.start(max(500, config.capture_interval_ms))
+        QtCore.QTimer.singleShot(0, self.show_health_summary)
 
     def _build_ui(self) -> None:
         toolbar = QtWidgets.QToolBar("Main")
@@ -58,6 +60,9 @@ class MainWindow(QtWidgets.QMainWindow):
         open_icon = self.style().standardIcon(QtWidgets.QStyle.StandardPixmap.SP_DialogOpenButton)
         self.test_image_action = toolbar.addAction(open_icon, "测试图片")
         self.test_image_action.triggered.connect(self.test_local_image)
+        health_icon = self.style().standardIcon(QtWidgets.QStyle.StandardPixmap.SP_MessageBoxInformation)
+        self.health_action = toolbar.addAction(health_icon, "环境检查")
+        self.health_action.triggered.connect(self.show_health_summary)
         self.always_top_action = toolbar.addAction("置顶")
         self.always_top_action.setCheckable(True)
         self.always_top_action.setChecked(self.config.ui.always_on_top)
@@ -269,6 +274,22 @@ class MainWindow(QtWidgets.QMainWindow):
 
         self._show_preview_recognition_results(path, image_bytes, results)
         self.status_label.setText(f"本地图片测试完成：{path.name}")
+
+    def show_health_summary(self) -> None:
+        report = build_health_report(self.config)
+        text = "\n".join(report.lines())
+        icon = QtWidgets.QMessageBox.Icon.Information if report.blocking_ok else QtWidgets.QMessageBox.Icon.Warning
+        QtWidgets.QMessageBox(
+            icon,
+            "环境检查",
+            text,
+            QtWidgets.QMessageBox.StandardButton.Ok,
+            self,
+        ).exec()
+        if report.blocking_ok:
+            self.status_label.setText(f"环境检查完成：{report.warnings} 个提醒。")
+        else:
+            self.status_label.setText("环境检查发现缺项，请查看提示。")
 
     def _show_preview_recognition_results(self, image_path: Path, image_bytes: bytes, results) -> None:
         accepted = accepted_count(results)

@@ -204,7 +204,7 @@ def _metadata_label(metadata: dict[str, Any], fallback: str) -> str:
 
 
 def _cv2():
-    return _vision_module("cv2")
+    return _vision_module("cv2", required_attr="imdecode")
 
 
 def _np():

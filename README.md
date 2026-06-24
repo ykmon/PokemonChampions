@@ -38,6 +38,7 @@ python -m pytest
 python -m champions_assistant run
 python -m champions_assistant calibrate
 python -m champions_assistant capture --out screenshots/sample.png
+python -m champions_assistant health-check
 python -m champions_assistant analyze --self Pikachu --opponent Gyarados
 python -m champions_assistant analyze --format doubles64 --self-team "Pikachu,Charizard,Gengar,Lucario,Dragonite,Sylveon" --opponent-team "Gyarados,Garchomp,Metagross,Venusaur,Incineroar,Flutter Mane" --self-active "Pikachu,Charizard" --opponent-active "Gyarados,Venusaur"
 ```
@@ -60,6 +61,16 @@ python -m champions_assistant recognize-preview --image screenshots/team_select.
 ```
 
 模板会保存在 `assets/pokemon_templates/<species_id>/preview_*.png`。同一只宝可梦可以保存多张模板，程序会取匹配分最高的一张。
+
+批量评估模板识别效果：
+
+```powershell
+python -m champions_assistant init-dataset-layout --dataset dataset
+python -m champions_assistant evaluate-templates --stage approved
+python -m champions_assistant evaluate-templates --stage pending --include-unapproved
+```
+
+`evaluate-templates` 会读取数据集 `manifest.json`，输出覆盖率、准确率、混淆对和薄弱宝可梦。它需要 `vision` 依赖；如果当前环境缺少 OpenCV/Numpy，可先运行 `python -m champions_assistant health-check` 查看缺项。
 
 ## Windows 启动器
 

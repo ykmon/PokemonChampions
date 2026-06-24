@@ -8,11 +8,18 @@ from .adb import AdbClient, AdbError
 from .config import load_config
 from .damage import DamageCalculator
 from .data_loader import DataRepository
+from .evaluation import (
+    DATASET_STAGES,
+    ensure_dataset_layout,
+    evaluate_template_manifests,
+    find_manifest_paths,
+)
+from .health import build_health_report
 from .models import BattleFormat, BattleSnapshot, update_field_slot, update_team_slot
 from .preview_recognition import recognize_opponent_preview
 from .recommender import build_recommendations
 from .roi import VisionDependencyError
-from .templates import PokemonTemplateMatcher, crop_image_bytes, default_opponent_preview_rois_1920
+from .templates import PokemonTemplateMatcher, _cv2, _np, crop_image_bytes, default_opponent_preview_rois_1920
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -32,6 +39,24 @@ def build_parser() -> argparse.ArgumentParser:
 
     recognize = subparsers.add_parser("recognize-preview", help="Recognize opponent preview icons from a screenshot.")
     recognize.add_argument("--image", required=True, help="Team preview screenshot path.")
+
+    evaluate = subparsers.add_parser("evaluate-templates", help="Evaluate template matching against dataset manifests.")
+    evaluate.add_argument("--dataset", default="dataset", help="Dataset root containing lifecycle stage directories.")
+    evaluate.add_argument(
+        "--stage",
+        choices=["all", *DATASET_STAGES],
+        default="all",
+        help="Dataset stage to scan for manifest.json files.",
+    )
+    evaluate.add_argument("--manifest", action="append", default=[], help="Specific manifest path. May be repeated.")
+    evaluate.add_argument("--include-unapproved", action="store_true", help="Include samples explicitly marked approved=false.")
+    evaluate.add_argument("--limit-confusions", type=int, default=10, help="Number of confusion pairs to print.")
+    evaluate.add_argument("--limit-species", type=int, default=10, help="Number of weakest species rows to print.")
+
+    subparsers.add_parser("health-check", help="Check local dependencies, data, ADB, ROI, and template readiness.")
+
+    init_dataset = subparsers.add_parser("init-dataset-layout", help="Create dataset lifecycle stage directories.")
+    init_dataset.add_argument("--dataset", default="dataset", help="Dataset root to initialize.")
 
     analyze = subparsers.add_parser("analyze", help="Analyze a manually selected matchup.")
     analyze.add_argument("--format", choices=[item.value for item in BattleFormat], default="singles63")
@@ -60,6 +85,20 @@ def main(argv: list[str] | None = None) -> int:
         return _harvest_templates(config, Path(args.image), args.opponent)
     if args.command == "recognize-preview":
         return _recognize_preview(config, Path(args.image))
+    if args.command == "evaluate-templates":
+        return _evaluate_templates(
+            config,
+            dataset_root=Path(args.dataset),
+            stage=args.stage,
+            manifest_paths=[Path(path) for path in args.manifest],
+            include_unapproved=args.include_unapproved,
+            limit_confusions=args.limit_confusions,
+            limit_species=args.limit_species,
+        )
+    if args.command == "health-check":
+        return _health_check(config)
+    if args.command == "init-dataset-layout":
+        return _init_dataset_layout(Path(args.dataset))
     if args.command == "analyze":
         return _analyze(
             config,
@@ -154,6 +193,81 @@ def _recognize_preview(config, image_path: Path) -> int:
     except (VisionDependencyError, ValueError) as exc:
         print(f"Preview recognition failed: {exc}", file=sys.stderr)
         return 1
+    return 0
+
+
+def _evaluate_templates(
+    config,
+    *,
+    dataset_root: Path,
+    stage: str,
+    manifest_paths: list[Path],
+    include_unapproved: bool,
+    limit_confusions: int,
+    limit_species: int,
+) -> int:
+    repository = DataRepository(config.data_dir)
+    paths = tuple(manifest_paths) if manifest_paths else find_manifest_paths(dataset_root, stage)
+    if not paths:
+        print(f"No manifest.json files found for stage '{stage}' under {dataset_root}.", file=sys.stderr)
+        return 1
+    matcher = PokemonTemplateMatcher(repository)
+    try:
+        _cv2()
+        _np()
+        report = evaluate_template_manifests(paths, matcher, include_unapproved=include_unapproved)
+    except (OSError, ValueError, VisionDependencyError) as exc:
+        print(f"Template evaluation failed: {exc}", file=sys.stderr)
+        return 1
+    if report.sample_count == 0:
+        print("No labeled samples found. Use --include-unapproved for pending review manifests.", file=sys.stderr)
+        return 1
+
+    print("Template evaluation")
+    print(f"  manifests: {len(report.manifest_paths)}")
+    print(f"  samples: {report.sample_count}")
+    print(f"  accepted coverage: {_percent(report.coverage)} ({report.accepted_count}/{report.sample_count})")
+    print(f"  accepted accuracy: {_percent(report.accuracy)} ({report.correct_count}/{report.sample_count})")
+    print(f"  top-1 accuracy before threshold: {_percent(report.top1_accuracy)} ({report.top1_correct_count}/{report.sample_count})")
+    if report.error_count:
+        print(f"  errors: {report.error_count}")
+    print("  statuses:")
+    for status, count in sorted(report.status_counts.items()):
+        print(f"    {status}: {count}")
+
+    confusions = report.confusions.most_common(max(0, limit_confusions))
+    if confusions:
+        print("  confusions:")
+        for (expected, predicted), count in confusions:
+            print(f"    {expected} -> {predicted}: {count}")
+
+    weakest = sorted(
+        report.species_metrics.items(),
+        key=lambda item: (item[1].accuracy, item[1].top1_accuracy, -item[1].total),
+    )[:max(0, limit_species)]
+    if weakest:
+        print("  weakest species:")
+        for species_id, metrics in weakest:
+            print(
+                f"    {species_id}: accepted={_percent(metrics.accuracy)} "
+                f"top1={_percent(metrics.top1_accuracy)} "
+                f"accepted_count={metrics.accepted}/{metrics.total}"
+            )
+    return 0 if report.error_count == 0 else 1
+
+
+def _health_check(config) -> int:
+    report = build_health_report(config)
+    print("\n".join(report.lines()))
+    return 0 if report.blocking_ok else 1
+
+
+def _init_dataset_layout(dataset_root: Path) -> int:
+    created = ensure_dataset_layout(dataset_root)
+    print(f"Dataset layout ready: {dataset_root}")
+    for stage in DATASET_STAGES:
+        marker = "created" if dataset_root / stage in created else "exists"
+        print(f"  {marker}: {dataset_root / stage}")
     return 0
 
 
@@ -294,3 +408,7 @@ def _opponent_preview_rois(config) -> dict[str, object]:
         configured = config.rois.get(key)
         rois[key] = configured if configured and configured.enabled else default_rect
     return rois
+
+
+def _percent(value: float) -> str:
+    return f"{value * 100:.1f}%"
