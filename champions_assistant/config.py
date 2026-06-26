@@ -8,6 +8,7 @@ import tomllib
 
 from .models import BattleFormat, Rect
 from .paths import DEFAULT_CONFIG_PATH, DEFAULT_DATA_DIR, DEFAULT_SCREENSHOTS_DIR
+from .screen_resources import load_resource_rois
 
 
 LEGACY_ROI_KEYS = ("self_name", "opponent_name", "self_hp", "opponent_hp", "turn")
@@ -41,6 +42,14 @@ class UiConfig:
 
 
 @dataclass
+class EmulatorConfig:
+    profile: str = "ldplayer9"
+    auto_detect: bool = True
+    connect_timeout_ms: int = 1200
+    capture_method: str = "auto"
+
+
+@dataclass
 class AppConfig:
     adb_path: str = "adb"
     device_serial: str = ""
@@ -51,6 +60,7 @@ class AppConfig:
     screenshots_dir: Path = DEFAULT_SCREENSHOTS_DIR
     rois: dict[str, Rect] = field(default_factory=lambda: {key: Rect() for key in ROI_KEYS})
     ui: UiConfig = field(default_factory=UiConfig)
+    emulator: EmulatorConfig = field(default_factory=EmulatorConfig)
 
 
 def load_config(path: Path | str = DEFAULT_CONFIG_PATH) -> AppConfig:
@@ -63,8 +73,11 @@ def load_config(path: Path | str = DEFAULT_CONFIG_PATH) -> AppConfig:
     data_dir = _resolve_relative(base_dir, raw.get("data_dir", "data"))
     screenshots_dir = _resolve_relative(base_dir, raw.get("screenshots_dir", "screenshots"))
     roi_raw = raw.get("roi", {})
-    rois = _load_rois(roi_raw)
+    rois = _default_roi_layer()
+    rois.update(load_resource_rois())
+    rois.update(_load_user_roi_overrides(roi_raw, rois))
     ui_raw = raw.get("ui", {})
+    emulator_raw = raw.get("emulator", {})
 
     return AppConfig(
         adb_path=str(raw.get("adb_path", "adb") or "adb"),
@@ -78,6 +91,12 @@ def load_config(path: Path | str = DEFAULT_CONFIG_PATH) -> AppConfig:
         ui=UiConfig(
             always_on_top=bool(ui_raw.get("always_on_top", True)),
             compact=bool(ui_raw.get("compact", False)),
+        ),
+        emulator=EmulatorConfig(
+            profile=str(emulator_raw.get("profile", "ldplayer9") or "ldplayer9"),
+            auto_detect=bool(emulator_raw.get("auto_detect", True)),
+            connect_timeout_ms=int(emulator_raw.get("connect_timeout_ms", 1200) or 1200),
+            capture_method=str(emulator_raw.get("capture_method", "auto") or "auto"),
         ),
     )
 
@@ -110,6 +129,12 @@ def _to_toml(config: AppConfig, config_path: Path = DEFAULT_CONFIG_PATH) -> str:
         f'default_format = "{_escape(config.default_format.value)}"',
         f'data_dir = "{_escape(_path_to_config_value(config.data_dir, base_dir))}"',
         f'screenshots_dir = "{_escape(_path_to_config_value(config.screenshots_dir, base_dir))}"',
+        "",
+        "[emulator]",
+        f'profile = "{_escape(config.emulator.profile)}"',
+        f"auto_detect = {_bool(config.emulator.auto_detect)}",
+        f"connect_timeout_ms = {int(config.emulator.connect_timeout_ms)}",
+        f'capture_method = "{_escape(config.emulator.capture_method)}"',
         "",
         "[ui]",
         f"always_on_top = {_bool(config.ui.always_on_top)}",
@@ -147,10 +172,28 @@ def _parse_default_format(value: Any) -> BattleFormat:
 
 
 def _load_rois(roi_raw: dict[str, Any]) -> dict[str, Rect]:
-    rois = {key: Rect.from_mapping(roi_raw.get(key, {})) for key in ROI_KEYS}
-    for key, rect in DEFAULT_ROIS_1920.items():
-        if not rois[key].enabled:
-            rois[key] = rect
+    rois = _default_roi_layer()
+    rois.update(_load_user_roi_overrides(roi_raw, rois))
+    return rois
+
+
+def _base_rois() -> dict[str, Rect]:
+    return {key: Rect() for key in ROI_KEYS}
+
+
+def _default_roi_layer() -> dict[str, Rect]:
+    rois = _base_rois()
+    rois.update(DEFAULT_ROIS_1920)
+    return rois
+
+
+def _load_user_roi_overrides(roi_raw: dict[str, Any], base_rois: dict[str, Rect] | None = None) -> dict[str, Rect]:
+    rois = dict(base_rois or _base_rois())
+    overrides: dict[str, Rect] = {}
+    for key in ROI_KEYS:
+        rect = Rect.from_mapping(roi_raw.get(key, {}))
+        if rect.enabled:
+            overrides[key] = rect
     legacy_mappings = {
         "self_name": "player_active_1",
         "opponent_name": "opponent_active_1",
@@ -159,6 +202,8 @@ def _load_rois(roi_raw: dict[str, Any]) -> dict[str, Rect]:
     }
     for legacy_key, new_key in legacy_mappings.items():
         legacy_rect = Rect.from_mapping(roi_raw.get(legacy_key, {}))
-        if legacy_rect.enabled and not rois[new_key].enabled:
-            rois[new_key] = legacy_rect
-    return rois
+        if legacy_rect.enabled:
+            overrides[legacy_key] = legacy_rect
+            if not rois[new_key].enabled:
+                overrides[new_key] = legacy_rect
+    return overrides

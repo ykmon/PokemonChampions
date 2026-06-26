@@ -3,10 +3,18 @@ from __future__ import annotations
 from dataclasses import replace
 from pathlib import Path
 
-from .adb import AdbClient, AdbError
+from .adb import AdbError
 from .config import AppConfig, ROI_KEYS, save_config
 from .damage import DamageCalculator
 from .data_loader import DataRepository
+from .debug_tools import (
+    PreviewDebugData,
+    build_preview_debug_data,
+    build_preview_debug_data_from_frame,
+    export_low_confidence_samples,
+    write_preview_debug_log,
+)
+from .emulator import adb_client_from_config
 from .health import build_health_report
 from .models import (
     BattleFormat,
@@ -19,9 +27,10 @@ from .models import (
     update_team_slot,
 )
 from .ocr import BattleRecognizer
-from .preview_recognition import accepted_count, recognize_opponent_preview
+from .preview_recognition import accepted_count
 from .recommender import build_recommendations
 from .roi import VisionDependencyError
+from .state_machine import evaluate_readonly_state
 
 try:
     from PySide6 import QtCore, QtGui, QtWidgets
@@ -29,14 +38,60 @@ except ImportError:
     raise
 
 
+class DebugImageLabel(QtWidgets.QLabel):
+    def __init__(self) -> None:
+        super().__init__()
+        self._source_size = QtCore.QSize()
+        self._rois: list[Rect] = []
+
+    def set_debug_image(self, image_bytes: bytes, rois: list[Rect]) -> None:
+        pixmap = QtGui.QPixmap()
+        pixmap.loadFromData(image_bytes)
+        self._source_size = pixmap.size()
+        self._rois = list(rois)
+        self._source_pixmap = pixmap
+        self._update_scaled_pixmap()
+
+    def resizeEvent(self, event) -> None:  # noqa: N802
+        super().resizeEvent(event)
+        if hasattr(self, "_source_pixmap") and not self._source_pixmap.isNull():
+            self._update_scaled_pixmap()
+
+    def _update_scaled_pixmap(self) -> None:
+        if self._source_pixmap.isNull():
+            self.setPixmap(self._source_pixmap)
+            return
+        scaled = self._source_pixmap.scaled(
+            self.size(),
+            QtCore.Qt.AspectRatioMode.KeepAspectRatio,
+            QtCore.Qt.TransformationMode.SmoothTransformation,
+        )
+        painted = QtGui.QPixmap(scaled)
+        painter = QtGui.QPainter(painted)
+        painter.setPen(QtGui.QPen(QtGui.QColor(255, 80, 80), 3))
+        if self._source_size.width() and self._source_size.height():
+            x_scale = scaled.width() / self._source_size.width()
+            y_scale = scaled.height() / self._source_size.height()
+            for rect in self._rois:
+                painter.drawRect(
+                    int(rect.x * x_scale),
+                    int(rect.y * y_scale),
+                    int(rect.width * x_scale),
+                    int(rect.height * y_scale),
+                )
+        painter.end()
+        self.setPixmap(painted)
+
+
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self, config: AppConfig) -> None:
         super().__init__()
         self.config = config
         self.repository = DataRepository(config.data_dir)
-        self.adb = AdbClient(config.adb_path, config.device_serial)
+        self.adb = adb_client_from_config(config)
         self.recognizer = BattleRecognizer(self.repository, config)
         self.snapshot = BattleSnapshot.empty(config.default_format)
+        self.preview_debug: PreviewDebugData | None = None
         self._combo_lookup: dict[QtWidgets.QComboBox, tuple[str, str, int]] = {}
         self._syncing = False
         self.setWindowTitle("Pokemon Champions Assistant")
@@ -58,7 +113,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.refresh_action = toolbar.addAction(refresh_icon, "刷新")
         self.refresh_action.triggered.connect(self.refresh_capture)
         open_icon = self.style().standardIcon(QtWidgets.QStyle.StandardPixmap.SP_DialogOpenButton)
-        self.test_image_action = toolbar.addAction(open_icon, "测试图片")
+        self.test_image_action = toolbar.addAction(open_icon, "识别调试")
         self.test_image_action.triggered.connect(self.test_local_image)
         health_icon = self.style().standardIcon(QtWidgets.QStyle.StandardPixmap.SP_MessageBoxInformation)
         self.health_action = toolbar.addAction(health_icon, "环境检查")
@@ -80,6 +135,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self._build_recommendations_tab()
         self._build_damage_tab()
         self._build_team_tab()
+        self._build_debug_tab()
 
     def _build_current_tab(self) -> None:
         tab = QtWidgets.QWidget()
@@ -198,6 +254,59 @@ class MainWindow(QtWidgets.QMainWindow):
         layout.addWidget(self.team_table)
         self.tabs.addTab(tab, "队伍数据")
 
+    def _build_debug_tab(self) -> None:
+        tab = QtWidgets.QWidget()
+        self.debug_tab = tab
+        layout = QtWidgets.QVBoxLayout(tab)
+
+        button_row = QtWidgets.QHBoxLayout()
+        refresh_button = QtWidgets.QPushButton("ADB 刷新截图")
+        refresh_button.clicked.connect(self.refresh_debug_capture)
+        open_button = QtWidgets.QPushButton("打开本地截图")
+        open_button.clicked.connect(self.open_debug_image)
+        export_button = QtWidgets.QPushButton("一键导出失败样本")
+        export_button.clicked.connect(self.export_debug_samples)
+        log_button = QtWidgets.QPushButton("打开日志目录")
+        log_button.clicked.connect(self.open_debug_log_dir)
+        button_row.addWidget(refresh_button)
+        button_row.addWidget(open_button)
+        button_row.addWidget(export_button)
+        button_row.addWidget(log_button)
+        button_row.addStretch(1)
+        layout.addLayout(button_row)
+
+        self.debug_summary = QtWidgets.QLabel("尚未加载调试截图。")
+        self.debug_summary.setWordWrap(True)
+        layout.addWidget(self.debug_summary)
+
+        splitter = QtWidgets.QSplitter(QtCore.Qt.Orientation.Vertical)
+        layout.addWidget(splitter, 1)
+
+        self.debug_image_label = DebugImageLabel()
+        self.debug_image_label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.debug_image_label.setMinimumHeight(260)
+        self.debug_image_label.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        splitter.addWidget(self.debug_image_label)
+
+        self.debug_table = QtWidgets.QTableWidget(0, 11)
+        self.debug_table.setHorizontalHeaderLabels(
+            ["槽位", "ROI", "识别结果", "置信度", "第二候选", "第二置信度", "状态", "耗时 ms", "失败原因", "候选", "命中模板"]
+        )
+        self.debug_table.horizontalHeader().setStretchLastSection(True)
+        self.debug_table.verticalHeader().setVisible(False)
+        splitter.addWidget(self.debug_table)
+
+        self.debug_crop_panel = QtWidgets.QWidget()
+        self.debug_crop_layout = QtWidgets.QGridLayout(self.debug_crop_panel)
+        self.debug_crop_layout.setContentsMargins(0, 0, 0, 0)
+        crop_scroll = QtWidgets.QScrollArea()
+        crop_scroll.setWidgetResizable(True)
+        crop_scroll.setWidget(self.debug_crop_panel)
+        splitter.addWidget(crop_scroll)
+        splitter.setSizes([320, 220, 180])
+
+        self.tabs.addTab(tab, "识别调试")
+
     def _populate_data(self) -> None:
         self.pokemon_items = self.repository.all_pokemon()
         all_combos = self._all_slot_combos()
@@ -255,10 +364,18 @@ class MainWindow(QtWidgets.QMainWindow):
         except (AdbError, RuntimeError, ValueError) as exc:
             self.status_label.setText(f"截图刷新失败：{exc}")
 
-    def test_local_image(self) -> None:
+    def refresh_debug_capture(self) -> None:
+        try:
+            captured = self.adb.capture_frame()
+            self._load_debug_frame(captured, source=f"adb:{captured.method.value} capture={captured.capture_ms:.1f}ms")
+            self.tabs.setCurrentWidget(self.debug_tab)
+        except (AdbError, RuntimeError, VisionDependencyError, ValueError) as exc:
+            QtWidgets.QMessageBox.warning(self, "调试截图失败", str(exc))
+
+    def open_debug_image(self) -> None:
         image_path, _ = QtWidgets.QFileDialog.getOpenFileName(
             self,
-            "选择游戏截图",
+            "Open debug screenshot",
             str(self.config.screenshots_dir),
             "Images (*.png *.jpg *.jpeg *.bmp *.webp);;All Files (*)",
         )
@@ -266,14 +383,100 @@ class MainWindow(QtWidgets.QMainWindow):
             return
         path = Path(image_path)
         try:
-            image_bytes = path.read_bytes()
-            results = recognize_opponent_preview(self.config, self.repository, image_bytes)
+            self._load_debug_image(path.read_bytes(), source=str(path))
+            self.tabs.setCurrentWidget(self.debug_tab)
         except (OSError, VisionDependencyError, ValueError) as exc:
-            QtWidgets.QMessageBox.warning(self, "图片识别失败", f"{path.name}\n\n{exc}")
-            return
+            QtWidgets.QMessageBox.warning(self, "调试图片识别失败", f"{path.name}\n\n{exc}")
 
-        self._show_preview_recognition_results(path, image_bytes, results)
-        self.status_label.setText(f"本地图片测试完成：{path.name}")
+    def export_debug_samples(self) -> None:
+        if self.preview_debug is None:
+            QtWidgets.QMessageBox.information(self, "导出样本", "请先加载一张调试截图。")
+            return
+        manifest = export_low_confidence_samples(self.preview_debug, Path("dataset"))
+        review = manifest.with_name("review.html")
+        QtWidgets.QMessageBox.information(self, "导出样本", f"已导出：{manifest}\n审核页：{review}")
+
+    def open_debug_log_dir(self) -> None:
+        log_dir = self.config.screenshots_dir / "debug"
+        log_dir.mkdir(parents=True, exist_ok=True)
+        QtGui.QDesktopServices.openUrl(QtCore.QUrl.fromLocalFile(str(log_dir.resolve())))
+
+    def _load_debug_image(self, image_bytes: bytes, *, source: str) -> None:
+        debug_data = build_preview_debug_data(self.config, self.repository, image_bytes, source=source)
+        self.preview_debug = debug_data
+        log_path = write_preview_debug_log(debug_data, self.config.screenshots_dir / "debug")
+        self._render_debug_data(debug_data, log_path)
+
+    def _load_debug_frame(self, captured, *, source: str) -> None:
+        debug_data = build_preview_debug_data_from_frame(self.config, self.repository, captured.frame, source=source)
+        self.preview_debug = debug_data
+        log_path = write_preview_debug_log(debug_data, self.config.screenshots_dir / "debug")
+        self._render_debug_data(debug_data, log_path)
+
+    def _render_debug_data(self, debug_data: PreviewDebugData, log_path: Path) -> None:
+        accepted = accepted_count(list(debug_data.results))
+        state = debug_data.state or evaluate_readonly_state(preview_results=debug_data.results)
+        diagnostics = "；".join(state.diagnostics) if state.diagnostics else "-"
+        total_ms = sum(float(result.timings.get("total_recognition_ms", result.elapsed_ms) if result.timings else result.elapsed_ms) for result in debug_data.results)
+        self.debug_summary.setText(
+            f"来源：{debug_data.source or 'screenshot'} | 尺寸：{debug_data.image_size[0]}x{debug_data.image_size[1]} | "
+            f"Screen：{debug_data.screen_name} | 状态：{state.state.value} | "
+            f"识别：{accepted}/{len(debug_data.results)} | 识别耗时：{total_ms:.1f} ms | 诊断：{diagnostics} | 日志：{log_path}"
+        )
+        self.debug_image_label.set_debug_image(debug_data.image_bytes, [result.crop_rect for result in debug_data.results])
+
+        self.debug_table.setRowCount(len(debug_data.results))
+        for row, result in enumerate(debug_data.results):
+            roi_text = f"{result.crop_rect.x},{result.crop_rect.y},{result.crop_rect.width},{result.crop_rect.height}"
+            candidates_text = ", ".join(
+                f"{candidate.rank}:{candidate.label} {candidate.confidence:.3f}" for candidate in result.candidates
+            ) or "-"
+            values = [
+                str(result.slot_index),
+                roi_text,
+                result.label,
+                f"{result.confidence:.3f}",
+                result.second_label or "-",
+                f"{result.second_confidence:.3f}" if result.second_species_id else "-",
+                result.status,
+                f"{result.elapsed_ms:.1f}",
+                result.failure_reason or "-",
+                candidates_text,
+                str(result.template_path) if result.template_path else "-",
+            ]
+            for column, value in enumerate(values):
+                self.debug_table.setItem(row, column, QtWidgets.QTableWidgetItem(value))
+        self.debug_table.resizeColumnsToContents()
+
+        while self.debug_crop_layout.count():
+            item = self.debug_crop_layout.takeAt(0)
+            widget = item.widget()
+            if widget is not None:
+                widget.deleteLater()
+        for index, result in enumerate(debug_data.results):
+            item = QtWidgets.QWidget()
+            item_layout = QtWidgets.QVBoxLayout(item)
+            item_layout.setContentsMargins(4, 4, 4, 4)
+            crop_label = QtWidgets.QLabel()
+            crop_label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+            crop_label.setFixedSize(150, 115)
+            crop_label.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+            crop_label.setPixmap(self._scaled_pixmap_from_bytes(result.crop_bytes, QtCore.QSize(140, 105)))
+            caption = QtWidgets.QLabel(
+                f"{result.slot_index}: {result.label}\n"
+                f"{result.confidence:.3f} {result.status}\n"
+                f"{result.failure_reason or result.roi_key}"
+            )
+            caption.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+            caption.setWordWrap(True)
+            item_layout.addWidget(crop_label)
+            item_layout.addWidget(caption)
+            self.debug_crop_layout.addWidget(item, index // 3, index % 3)
+
+    def test_local_image(self) -> None:
+        self.tabs.setCurrentWidget(self.debug_tab)
+        self.open_debug_image()
+        self.status_label.setText("本地截图已加载到识别调试页。")
 
     def show_health_summary(self) -> None:
         report = build_health_report(self.config)

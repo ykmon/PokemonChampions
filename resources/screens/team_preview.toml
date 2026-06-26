@@ -1,0 +1,71 @@
+[screen]
+name = "team_preview"
+base_width = 1920
+base_height = 1080
+recognizer = "template"
+
+[detection]
+kind = "opponent_preview_slots"
+expected_aspect = "16:9"
+required_slots = 6
+
+[thresholds]
+auto_accept = 0.88
+low_confidence = 0.55
+ambiguity_margin = 0.025
+top1_threshold = 0.88
+margin_threshold = 0.025
+verify_top_k = 5
+min_template_votes = 1
+
+[recognizers]
+opponent_preview_1 = "preview_template"
+opponent_preview_2 = "preview_template"
+opponent_preview_3 = "preview_template"
+opponent_preview_4 = "preview_template"
+opponent_preview_5 = "preview_template"
+opponent_preview_6 = "preview_template"
+
+[template_groups]
+opponent_preview_1 = "preview"
+opponent_preview_2 = "preview"
+opponent_preview_3 = "preview"
+opponent_preview_4 = "preview"
+opponent_preview_5 = "preview"
+opponent_preview_6 = "preview"
+
+[roi.opponent_preview_1]
+x = 1375
+y = 144
+width = 150
+height = 115
+
+[roi.opponent_preview_2]
+x = 1375
+y = 274
+width = 150
+height = 115
+
+[roi.opponent_preview_3]
+x = 1375
+y = 404
+width = 150
+height = 115
+
+[roi.opponent_preview_4]
+x = 1375
+y = 534
+width = 150
+height = 115
+
+[roi.opponent_preview_5]
+x = 1375
+y = 664
+width = 150
+height = 115
+
+[roi.opponent_preview_6]
+x = 1375
+y = 794
+width = 150
+height = 115

@@ -1,0 +1,58 @@
+# Vision recognition configuration
+
+[recognition]
+# Template matching
+use_enhanced_matching = true  # Use multi-algorithm + preprocessing
+enable_preprocessing = true   # Auto-detect and enhance image quality
+enable_verification = true    # Verify high-confidence matches with second algorithm
+
+# Algorithm selection
+primary_algorithm = "TM_CCORR_NORMED"  # TM_CCORR_NORMED, TM_CCOEFF_NORMED, TM_SQDIFF_NORMED
+verification_algorithm = "TM_CCOEFF_NORMED"
+verification_threshold = 0.85
+
+# Feature extraction
+feature_type = "adaptive"  # adaptive, hsv_gray, lab_gray, hsv_only
+
+[recognition.thresholds]
+auto_accept = 0.88
+low_confidence = 0.55
+ambiguity_margin = 0.025
+
+[recognition.performance]
+enable_fast_preview = true
+verify_top_k = 5
+min_template_votes = 1
+target_total_ms = 20.0
+
+# Preprocessing presets
+[recognition.presets]
+# Uncomment to force a specific preset instead of adaptive
+# active_preset = "low_light"  # low_light, blurry, noisy, none
+
+[recognition.presets.low_light]
+enable_clahe = true
+clahe_clip_limit = 2.0
+enable_gamma_correction = true
+gamma = 1.2
+
+[recognition.presets.blurry]
+enable_sharpen = true
+sharpen_amount = 1.5
+enable_denoise = true
+denoise_h = 10.0
+
+[recognition.presets.noisy]
+enable_denoise = true
+denoise_h = 15.0
+
+# OCR configuration
+[ocr]
+# Engine priority: rapidocr, paddleocr
+engines = ["rapidocr", "paddleocr"]
+min_confidence = 0.6
+
+# Performance
+[performance]
+enable_gpu = false  # Future: ONNX Runtime GPU acceleration
+batch_size = 1

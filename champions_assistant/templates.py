@@ -5,12 +5,18 @@ import importlib
 import sys
 from dataclasses import dataclass, replace
 from pathlib import Path
-from typing import Any
+from typing import Any, Literal
 
 from .data_loader import DataRepository
 from .models import PokemonIdentity, Rect
 from .paths import PROJECT_ROOT
 from .roi import VisionDependencyError
+from .vision_engine import (
+    EnhancedFeatureExtractor,
+    MatchAlgorithm,
+    MultiAlgorithmMatcher,
+    PreprocessConfig,
+)
 
 
 TEMPLATE_ROOT = PROJECT_ROOT / "assets" / "pokemon_templates"
@@ -20,6 +26,15 @@ AUTO_ACCEPT_THRESHOLD = 0.88
 SYNTHETIC_AUTO_ACCEPT_THRESHOLD = 0.965
 LOW_CONFIDENCE_THRESHOLD = 0.55
 AMBIGUITY_MARGIN_THRESHOLD = 0.025
+LiteralFeatureType = Literal["hsv_gray", "lab_gray", "hsv_only", "adaptive"]
+
+
+@dataclass(frozen=True)
+class TemplateCandidate:
+    rank: int
+    species_id: str
+    confidence: float
+    template_path: Path | None = None
 
 
 @dataclass(frozen=True)
@@ -29,21 +44,29 @@ class TemplateMatch:
     template_path: Path | None = None
     second_confidence: float = 0.0
     second_species_id: str | None = None
+    second_template_path: Path | None = None
+    candidates: tuple[TemplateCandidate, ...] = ()
+    auto_accept_threshold: float = AUTO_ACCEPT_THRESHOLD
+    low_confidence_threshold: float = LOW_CONFIDENCE_THRESHOLD
+    ambiguity_margin_threshold: float = AMBIGUITY_MARGIN_THRESHOLD
+
+    @property
+    def effective_auto_accept_threshold(self) -> float:
+        return _threshold_for_template(self.template_path, self.auto_accept_threshold)
 
     @property
     def accepted(self) -> bool:
         if self.species_id is None:
             return False
-        threshold = _threshold_for_template(self.template_path)
-        if self.confidence < threshold:
+        if self.confidence < self.effective_auto_accept_threshold:
             return False
-        if self.second_species_id and self.confidence - self.second_confidence < AMBIGUITY_MARGIN_THRESHOLD:
+        if self.second_species_id and self.confidence - self.second_confidence < self.ambiguity_margin_threshold:
             return False
         return True
 
     @property
     def low_confidence(self) -> bool:
-        return self.species_id is not None and LOW_CONFIDENCE_THRESHOLD <= self.confidence and not self.accepted
+        return self.species_id is not None and self.low_confidence_threshold <= self.confidence and not self.accepted
 
 
 def default_opponent_preview_rois_1920() -> dict[str, Rect]:
@@ -54,11 +77,48 @@ def default_opponent_preview_rois_1920() -> dict[str, Rect]:
 
 
 class PokemonTemplateMatcher:
-    def __init__(self, repository: DataRepository, template_root: Path | str = TEMPLATE_ROOT) -> None:
+    def __init__(
+        self,
+        repository: DataRepository,
+        template_root: Path | str = TEMPLATE_ROOT,
+        *,
+        use_enhanced_matching: bool = True,
+        enable_preprocessing: bool = True,
+        enable_verification: bool = True,
+        primary_algorithm: str | MatchAlgorithm = MatchAlgorithm.CCORR_NORMED,
+        verification_algorithm: str | MatchAlgorithm = MatchAlgorithm.CCOEFF_NORMED,
+        verification_threshold: float = 0.85,
+        feature_type: LiteralFeatureType = "adaptive",
+        auto_accept_threshold: float = AUTO_ACCEPT_THRESHOLD,
+        low_confidence_threshold: float = LOW_CONFIDENCE_THRESHOLD,
+        ambiguity_margin_threshold: float = AMBIGUITY_MARGIN_THRESHOLD,
+    ) -> None:
         self.repository = repository
         self.template_root = Path(template_root)
         self._templates: list[tuple[str, Path, object]] | None = None
         self._metadata: dict[str, dict[str, Any]] | None = None
+        self.use_enhanced_matching = use_enhanced_matching
+        self.enable_preprocessing = enable_preprocessing
+        self.enable_verification = enable_verification
+        self.auto_accept_threshold = auto_accept_threshold
+        self.low_confidence_threshold = low_confidence_threshold
+        self.ambiguity_margin_threshold = ambiguity_margin_threshold
+
+        # Enhanced components
+        if use_enhanced_matching:
+            self._feature_extractor = EnhancedFeatureExtractor(
+                feature_type=feature_type,
+                target_size=MATCH_SIZE,
+            )
+            self._matcher = MultiAlgorithmMatcher(
+                primary_algorithm=_parse_match_algorithm(primary_algorithm),
+                enable_verification=enable_verification,
+                verification_algorithm=_parse_match_algorithm(verification_algorithm),
+                verification_threshold=verification_threshold,
+            )
+        else:
+            self._feature_extractor = None
+            self._matcher = None
 
     def match_identity(self, image_bytes: bytes) -> PokemonIdentity:
         match = self.match(image_bytes)
@@ -86,6 +146,12 @@ class PokemonTemplateMatcher:
         templates = self._load_templates()
         if not templates:
             return TemplateMatch(species_id=None, confidence=0.0)
+
+        # Use enhanced matching if enabled
+        if self.use_enhanced_matching and self._feature_extractor and self._matcher:
+            return self._match_enhanced(image_bytes, templates)
+
+        # Fallback to original matching
         query = _prepare_image(image_bytes)
         best_by_species: dict[str, TemplateMatch] = {}
         cv2 = _cv2()
@@ -94,15 +160,44 @@ class PokemonTemplateMatcher:
             _, score, _, _ = cv2.minMaxLoc(result)
             species_best = best_by_species.get(species_id)
             if species_best is None or float(score) > species_best.confidence:
-                best_by_species[species_id] = TemplateMatch(species_id=species_id, confidence=float(score), template_path=path)
+                best_by_species[species_id] = self._make_template_match(species_id, float(score), path)
         if not best_by_species:
             return TemplateMatch(species_id=None, confidence=0.0)
         ranked = sorted(best_by_species.values(), key=lambda match: match.confidence, reverse=True)
-        best = ranked[0]
-        if len(ranked) == 1:
-            return best
-        runner_up = ranked[1]
-        return replace(best, second_confidence=runner_up.confidence, second_species_id=runner_up.species_id)
+        return _with_ranked_candidates(ranked)
+
+    def _match_enhanced(self, image_bytes: bytes, templates: list[tuple[str, Path, object]]) -> TemplateMatch:
+        """Enhanced matching with preprocessing and multi-algorithm verification"""
+        # Extract features with adaptive preprocessing
+        preprocess_config = None if self.enable_preprocessing else PreprocessConfig()
+        query = self._feature_extractor.extract(image_bytes, preprocess_config=preprocess_config)
+
+        best_by_species: dict[str, TemplateMatch] = {}
+
+        for species_id, path, template in templates:
+            # Use multi-algorithm matcher
+            match_result = self._matcher.match(query, template, preprocess_config=preprocess_config)
+            score = match_result.confidence
+
+            species_best = best_by_species.get(species_id)
+            if species_best is None or score > species_best.confidence:
+                best_by_species[species_id] = self._make_template_match(species_id, score, path)
+
+        if not best_by_species:
+            return TemplateMatch(species_id=None, confidence=0.0)
+
+        ranked = sorted(best_by_species.values(), key=lambda match: match.confidence, reverse=True)
+        return _with_ranked_candidates(ranked)
+
+    def _make_template_match(self, species_id: str, confidence: float, path: Path) -> TemplateMatch:
+        return TemplateMatch(
+            species_id=species_id,
+            confidence=confidence,
+            template_path=path,
+            auto_accept_threshold=self.auto_accept_threshold,
+            low_confidence_threshold=self.low_confidence_threshold,
+            ambiguity_margin_threshold=self.ambiguity_margin_threshold,
+        )
 
     def save_template(self, species_id: str, image_bytes: bytes) -> Path:
         if species_id not in self.repository.pokemon_by_id and species_id not in self._load_metadata():
@@ -127,7 +222,17 @@ class PokemonTemplateMatcher:
             if not species_dir.is_dir():
                 continue
             for path in sorted(species_dir.glob("*.png")):
-                templates.append((species_dir.name, path, _prepare_image(path.read_bytes())))
+                if self.use_enhanced_matching and self._feature_extractor:
+                    # Use enhanced feature extraction
+                    preprocess_config = None if self.enable_preprocessing else PreprocessConfig()
+                    template_feature = self._feature_extractor.extract(
+                        path.read_bytes(),
+                        preprocess_config=preprocess_config,
+                    )
+                    templates.append((species_dir.name, path, template_feature))
+                else:
+                    # Use original feature extraction
+                    templates.append((species_dir.name, path, _prepare_image(path.read_bytes())))
         self._templates = templates
         return self._templates
 
@@ -203,6 +308,30 @@ def _metadata_label(metadata: dict[str, Any], fallback: str) -> str:
     return str(metadata.get("name_en") or metadata.get("name_zh") or fallback)
 
 
+def _with_ranked_candidates(ranked: list[TemplateMatch]) -> TemplateMatch:
+    best = ranked[0]
+    candidates = tuple(
+        TemplateCandidate(
+            rank=index,
+            species_id=str(match.species_id),
+            confidence=match.confidence,
+            template_path=match.template_path,
+        )
+        for index, match in enumerate(ranked[:3], start=1)
+        if match.species_id
+    )
+    if len(ranked) == 1:
+        return replace(best, candidates=candidates)
+    runner_up = ranked[1]
+    return replace(
+        best,
+        second_confidence=runner_up.confidence,
+        second_species_id=runner_up.species_id,
+        second_template_path=runner_up.template_path,
+        candidates=candidates,
+    )
+
+
 def _cv2():
     return _vision_module("cv2", required_attr="imdecode")
 
@@ -211,10 +340,19 @@ def _np():
     return _vision_module("numpy", required_attr="frombuffer")
 
 
-def _threshold_for_template(path: Path | None) -> float:
+def _threshold_for_template(path: Path | None, auto_accept_threshold: float = AUTO_ACCEPT_THRESHOLD) -> float:
     if path and path.name.startswith("synthetic_redcard_"):
         return SYNTHETIC_AUTO_ACCEPT_THRESHOLD
-    return AUTO_ACCEPT_THRESHOLD
+    return auto_accept_threshold
+
+
+def _parse_match_algorithm(value: str | MatchAlgorithm) -> MatchAlgorithm:
+    if isinstance(value, MatchAlgorithm):
+        return value
+    try:
+        return MatchAlgorithm(str(value))
+    except ValueError:
+        return MatchAlgorithm.CCORR_NORMED
 
 
 def _vision_module(module_name: str, required_attr: str | None = None):

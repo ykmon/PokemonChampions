@@ -1,0 +1,25 @@
+[screen]
+name = "result_screen"
+base_width = 1920
+base_height = 1080
+recognizer = "state_only"
+
+[detection]
+kind = "result_ui"
+expected_aspect = "16:9"
+read_only = true
+
+[thresholds]
+screen_confidence = 0.75
+
+[recognizers]
+result_banner = "screen_detector"
+
+[template_groups]
+result_banner = "result_ui"
+
+[roi.result_banner]
+x = 0
+y = 0
+width = 0
+height = 0

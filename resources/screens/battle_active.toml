@@ -1,0 +1,57 @@
+[screen]
+name = "battle_active"
+base_width = 1920
+base_height = 1080
+recognizer = "ocr"
+
+[detection]
+kind = "battle_hud"
+expected_aspect = "16:9"
+required_active_slots = 1
+
+[thresholds]
+name_ocr = 0.60
+hp_ocr = 0.60
+
+[recognizers]
+player_active_1 = "active_name_ocr"
+opponent_active_1 = "active_name_ocr"
+player_active_1_hp = "hp_ocr"
+opponent_active_1_hp = "hp_ocr"
+turn = "turn_ocr"
+
+[template_groups]
+player_active_1 = "active_name_ocr"
+opponent_active_1 = "active_name_ocr"
+player_active_1_hp = "hp_ocr"
+opponent_active_1_hp = "hp_ocr"
+
+[roi.player_active_1]
+x = 0
+y = 0
+width = 0
+height = 0
+
+[roi.opponent_active_1]
+x = 0
+y = 0
+width = 0
+height = 0
+
+[roi.player_active_1_hp]
+x = 0
+y = 0
+width = 0
+height = 0
+
+[roi.opponent_active_1_hp]
+x = 0
+y = 0
+width = 0
+height = 0
+
+[roi.turn]
+x = 0
+y = 0
+width = 0
+height = 0

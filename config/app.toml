@@ -6,6 +6,12 @@ default_format = "singles63"
 data_dir = "data"
 screenshots_dir = "screenshots"
 
+[emulator]
+profile = "ldplayer9"
+auto_detect = true
+connect_timeout_ms = 1200
+capture_method = "auto"
+
 [ui]
 always_on_top = true
 compact = false
