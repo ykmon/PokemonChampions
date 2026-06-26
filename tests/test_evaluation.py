@@ -55,6 +55,8 @@ class EvaluationTests(unittest.TestCase):
             self.assertEqual(report.sample_count, 2)
             self.assertEqual(report.accepted_count, 2)
             self.assertEqual(report.correct_count, 1)
+            self.assertEqual(report.accepted_precision, 0.5)
+            self.assertGreaterEqual(report.p95_ms, 0.0)
             self.assertEqual(report.confusions[("gengar", "pikachu")], 1)
             self.assertEqual(report.species_metrics["pikachu"].accepted_correct, 1)
             self.assertEqual(report.species_metrics["gengar"].accepted_correct, 0)

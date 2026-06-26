@@ -4,10 +4,11 @@ import argparse
 import sys
 from pathlib import Path
 
-from .adb import AdbClient, AdbError
+from .adb import AdbError
 from .config import load_config
 from .damage import DamageCalculator
 from .data_loader import DataRepository
+from .emulator import adb_client_from_config
 from .evaluation import (
     DATASET_STAGES,
     ensure_dataset_layout,
@@ -19,7 +20,8 @@ from .models import BattleFormat, BattleSnapshot, update_field_slot, update_team
 from .preview_recognition import recognize_opponent_preview
 from .recommender import build_recommendations
 from .roi import VisionDependencyError
-from .templates import PokemonTemplateMatcher, _cv2, _np, crop_image_bytes, default_opponent_preview_rois_1920
+from .templates import _cv2, _np, crop_image_bytes, default_opponent_preview_rois_1920
+from .vision_config import build_template_matcher
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -32,6 +34,8 @@ def build_parser() -> argparse.ArgumentParser:
 
     capture = subparsers.add_parser("capture", help="Save one emulator screenshot through ADB.")
     capture.add_argument("--out", default="screenshots/sample.png", help="PNG output path.")
+
+    subparsers.add_parser("capture-benchmark", help="Benchmark ADB screenshot methods and select the fastest usable one.")
 
     harvest = subparsers.add_parser("harvest-templates", help="Crop opponent preview icons and save them as templates.")
     harvest.add_argument("--image", required=True, help="Team preview screenshot path.")
@@ -81,6 +85,8 @@ def main(argv: list[str] | None = None) -> int:
         return _run_calibration(config, Path(args.config))
     if args.command == "capture":
         return _capture(config, Path(args.out))
+    if args.command == "capture-benchmark":
+        return _capture_benchmark(config)
     if args.command == "harvest-templates":
         return _harvest_templates(config, Path(args.image), args.opponent)
     if args.command == "recognize-preview":
@@ -135,14 +141,28 @@ def _run_calibration(config, config_path: Path) -> int:
 
 
 def _capture(config, out_path: Path) -> int:
-    client = AdbClient(config.adb_path, config.device_serial)
+    client = adb_client_from_config(config)
     try:
         client.capture_screenshot(out_path)
     except AdbError as exc:
         print(f"Capture failed: {exc}", file=sys.stderr)
         return 1
     print(f"Saved screenshot to {out_path}")
+    if client.capture_benchmark is not None:
+        print(f"Capture method: {client.capture_benchmark.summary()}")
     return 0
+
+
+def _capture_benchmark(config) -> int:
+    client = adb_client_from_config(config)
+    try:
+        benchmark = client.benchmark_capture_methods()
+    except AdbError as exc:
+        print(f"Capture benchmark failed: {exc}", file=sys.stderr)
+        return 1
+    print("Capture benchmark")
+    print(f"  {benchmark.summary()}")
+    return 0 if benchmark.ok else 1
 
 
 def _harvest_templates(config, image_path: Path, opponent: str) -> int:
@@ -155,7 +175,7 @@ def _harvest_templates(config, image_path: Path, opponent: str) -> int:
         print(f"Image not found: {image_path}", file=sys.stderr)
         return 1
     image_bytes = image_path.read_bytes()
-    matcher = PokemonTemplateMatcher(repository)
+    matcher = build_template_matcher(repository)
     rois = _opponent_preview_rois(config)
     try:
         for index, name in enumerate(names, start=1):
@@ -186,10 +206,16 @@ def _recognize_preview(config, image_path: Path) -> int:
                     f"{result.roi_key}: {result.label} "
                     f"confidence={result.confidence:.3f} "
                     f"status={result.status} "
+                    f"ms={result.elapsed_ms:.2f} "
+                    f"failure={result.failure_reason or '-'} "
                     f"template={result.template_path}"
                 )
             else:
-                print(f"{result.roi_key}: Unknown confidence=0.000 status=no-template")
+                print(
+                    f"{result.roi_key}: Unknown confidence=0.000 "
+                    f"status={result.status} ms={result.elapsed_ms:.2f} "
+                    f"failure={result.failure_reason or '-'}"
+                )
     except (VisionDependencyError, ValueError) as exc:
         print(f"Preview recognition failed: {exc}", file=sys.stderr)
         return 1
@@ -211,7 +237,7 @@ def _evaluate_templates(
     if not paths:
         print(f"No manifest.json files found for stage '{stage}' under {dataset_root}.", file=sys.stderr)
         return 1
-    matcher = PokemonTemplateMatcher(repository)
+    matcher = build_template_matcher(repository)
     try:
         _cv2()
         _np()
@@ -227,8 +253,10 @@ def _evaluate_templates(
     print(f"  manifests: {len(report.manifest_paths)}")
     print(f"  samples: {report.sample_count}")
     print(f"  accepted coverage: {_percent(report.coverage)} ({report.accepted_count}/{report.sample_count})")
+    print(f"  accepted precision: {_percent(report.accepted_precision)} ({report.correct_count}/{report.accepted_count})")
     print(f"  accepted accuracy: {_percent(report.accuracy)} ({report.correct_count}/{report.sample_count})")
     print(f"  top-1 accuracy before threshold: {_percent(report.top1_accuracy)} ({report.top1_correct_count}/{report.sample_count})")
+    print(f"  p95 match time: {report.p95_ms:.2f} ms")
     if report.error_count:
         print(f"  errors: {report.error_count}")
     print("  statuses:")

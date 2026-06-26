@@ -4,6 +4,7 @@ import json
 from collections import Counter, defaultdict
 from dataclasses import dataclass
 from pathlib import Path
+from statistics import quantiles
 from typing import Iterable, Sequence
 
 from .templates import PokemonTemplateMatcher, TemplateMatch
@@ -35,6 +36,7 @@ class SampleEvaluation:
     second_species_id: str | None = None
     second_confidence: float = 0.0
     error: str = ""
+    duration_ms: float = 0.0
 
 
 @dataclass(frozen=True)
@@ -84,12 +86,25 @@ class EvaluationReport:
         return self.correct_count / self.sample_count if self.sample_count else 0.0
 
     @property
+    def accepted_precision(self) -> float:
+        return self.correct_count / self.accepted_count if self.accepted_count else 0.0
+
+    @property
     def top1_accuracy(self) -> float:
         return self.top1_correct_count / self.sample_count if self.sample_count else 0.0
 
     @property
     def coverage(self) -> float:
         return self.accepted_count / self.sample_count if self.sample_count else 0.0
+
+    @property
+    def p95_ms(self) -> float:
+        durations = sorted(result.duration_ms for result in self.results if result.duration_ms >= 0)
+        if not durations:
+            return 0.0
+        if len(durations) < 2:
+            return durations[0]
+        return quantiles(durations, n=20, method="inclusive")[18]
 
     @property
     def status_counts(self) -> Counter[str]:
@@ -225,7 +240,11 @@ def _evaluate_one(sample: EvaluationSample, matcher: PokemonTemplateMatcher) -> 
             error=f"Crop image not found: {sample.crop_path}",
         )
     try:
+        import time
+
+        started = time.perf_counter()
         match = matcher.match(sample.crop_path.read_bytes())
+        duration_ms = (time.perf_counter() - started) * 1000
     except Exception as exc:
         return SampleEvaluation(
             sample=sample,
@@ -237,10 +256,10 @@ def _evaluate_one(sample: EvaluationSample, matcher: PokemonTemplateMatcher) -> 
             top1_correct=False,
             error=str(exc),
         )
-    return _result_from_match(sample, match)
+    return _result_from_match(sample, match, duration_ms=duration_ms)
 
 
-def _result_from_match(sample: EvaluationSample, match: TemplateMatch) -> SampleEvaluation:
+def _result_from_match(sample: EvaluationSample, match: TemplateMatch, *, duration_ms: float = 0.0) -> SampleEvaluation:
     status = _match_status(match)
     top1_correct = match.species_id == sample.expected_species_id
     correct = top1_correct and match.accepted
@@ -254,6 +273,7 @@ def _result_from_match(sample: EvaluationSample, match: TemplateMatch) -> Sample
         top1_correct=top1_correct,
         second_species_id=match.second_species_id,
         second_confidence=match.second_confidence,
+        duration_ms=duration_ms,
     )
 
 

@@ -15,6 +15,7 @@ from .models import (
 )
 from .roi import VisionDependencyError, crop_png_with_cv2
 from .templates import PokemonTemplateMatcher
+from .vision_config import build_template_matcher
 
 
 @dataclass(frozen=True)
@@ -105,7 +106,7 @@ class BattleRecognizer:
         self.repository = repository
         self.config = config
         self.engine = engine or OptionalOcrEngine()
-        self.template_matcher = template_matcher or PokemonTemplateMatcher(repository)
+        self.template_matcher = template_matcher or build_template_matcher(repository)
 
     def recognize(
         self,
